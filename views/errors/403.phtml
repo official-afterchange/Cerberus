@@ -1,0 +1,15 @@
+<div class="centered-container" style="text-align: center; max-width: 600px; padding: 4rem 1rem;">
+    <h1 style="font-size: 5rem; letter-spacing: -0.05em; margin-bottom: 0; line-height: 1;">403</h1>
+    <h2 style="font-size: 1.5rem; margin-bottom: var(--spacing-md); opacity: 0.8;">Forbidden</h2>
+    
+    <p style="font-size: 1rem; opacity: 0.6; max-width: 450px; margin: 0 auto var(--spacing-lg) auto;">
+        <?= htmlspecialchars($message ?? 'You do not have permission to access this resource.') ?>
+    </p>
+
+    <div style="display: flex; gap: var(--spacing-sm); justify-content: center;">
+        <a href="/" class="secondary-button" style="min-width: unset;"><?= $t->trans('HOME') ?></a>
+        <?php if (!isset($_SESSION['user_id'])): ?>
+            <a href="/login" class="secondary-button" style="min-width: unset;"><?= $t->trans('LOGIN') ?></a>
+        <?php endif; ?>
+    </div>
+</div>

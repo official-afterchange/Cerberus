@@ -1,0 +1,37 @@
+{
+    "name": "afterchange/template",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Afterchange\\Template\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "afterchange"
+        }
+    ],
+    "scripts": {
+        "cs:fix": "php-cs-fixer fix",
+        "cs:check": "php-cs-fixer check",
+        "test": "phpunit --testdox",
+        "uml": "php uml/generate-uml.php && java -jar uml/plantuml.jar uml/diagram.puml",
+        "puml": "php uml/generate-uml.php"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "4.15.1",
+        "php-di/php-di": "^7.1",
+        "slim/psr7": "^1.8",
+        "slim/php-view": "^3.4",
+        "vlucas/phpdotenv": "^5.6",
+        "symfony/yaml": "^8.0",
+        "monolog/monolog": "^3.0",
+        "symfony/mailer": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "phpunit/phpunit": "^10"
+    }
+}

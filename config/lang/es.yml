@@ -1,0 +1,64 @@
+# ===== ERRORES =====
+MISSING_FIELDS: "Por favor, completa todos los campos."
+INVALID_EMAIL: "Por favor, introduce un correo electrónico válido."
+WEAK_PASSWORD: "La contraseña debe tener al menos 8 caracteres."
+EMAIL_ALREADY_EXISTS: "Este correo electrónico ya está registrado."
+USERNAME_ALREADY_TAKEN: "Este nombre de usuario ya está en uso."
+LOGIN_FAILED: "Credenciales inválidas. Inténtalo de nuevo."
+REGISTRATION_FAILED: "Ocurrió un error. Por favor, inténtalo de nuevo."
+TOO_MANY_REQUESTS: "Demasiados intentos de inicio de sesión. Inténtalo más tarde."
+INVALID_RESET_TOKEN: "Token de restablecimiento inválido o expirado."
+
+# ===== ÉXITO =====
+SUCCESS_REGISTER: "Registro exitoso. Por favor, inicia sesión."
+SUCCESS_UPDATE: "Perfil actualizado correctamente."
+PASSWORD_RESET_SUCCESS: "Contraseña restablecida correctamente. Ahora puedes iniciar sesión."
+RESET_LINK_SENT: "Si existe una cuenta, se ha enviado un enlace de restablecimiento a tu correo electrónico."
+
+# ===== NAVEGACIÓN =====
+HOME: "Inicio"
+LOGIN: "Iniciar sesión"
+LOGOUT: "Cerrar sesión"
+REGISTER: "Registrarse"
+PROFILE: "Perfil"
+
+# ===== BIENVENIDA =====
+SITE_TITLE: "AfterChange Template"
+WELCOME_TITLE: "SISTEMA DE AUTENTICACIÓN<br>MODERNO"
+WELCOME_SUBTITLE: "Un sistema de autenticación limpio, seguro y escalable, diseñado para aplicaciones web modernas."
+
+ACTION_LOGIN: "INICIAR SESIÓN"
+ACTION_SIGNUP: "REGISTRARSE"
+
+# ===== LOGIN =====
+LOGIN_TITLE: "CONEXIÓN"
+USERNAME_OR_EMAIL: "NOMBRE DE USUARIO O CORREO"
+PASSWORD: "CONTRASEÑA"
+REMEMBER_ME: "Recordarme"
+FORGOT_PASSWORD: "¿Olvidaste tu contraseña?"
+SUBMIT_LOGIN: "INICIAR SESIÓN"
+DONT_HAVE_ACCOUNT: "¿No tienes una cuenta?"
+
+# ===== REGISTRO =====
+REGISTER_TITLE: "REGISTRO"
+USERNAME: "NOMBRE DE USUARIO"
+EMAIL: "CORREO ELECTRÓNICO"
+SUBMIT_REGISTER: "REGISTRARSE"
+ALREADY_HAVE_ACCOUNT: "¿Ya tienes una cuenta?"
+
+# ===== PERFIL =====
+PROFILE_TITLE: "TU PERFIL"
+NEW_PASSWORD_LABEL: "NUEVA CONTRASEÑA (DEJAR VACÍO PARA MANTENER LA ACTUAL)"
+SUBMIT_UPDATE: "ACTUALIZAR PERFIL"
+
+# ===== RESTABLECER CONTRASEÑA =====
+FORGOT_PASSWORD_DESC: "Introduce tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña."
+SEND_RESET_LINK: "Enviar enlace de restablecimiento"
+BACK_TO_LOGIN: "Volver al inicio de sesión"
+RESET_PASSWORD: "Restablecer contraseña"
+RESET_PASSWORD_DESC: "Por favor, introduce tu nueva contraseña abajo."
+NEW_PASSWORD: "Nueva contraseña"
+SUBMIT_RESET: "Restablecer contraseña"
+
+# ===== PIE DE PÁGINA =====
+COPYRIGHT: "Todos los derechos reservados"

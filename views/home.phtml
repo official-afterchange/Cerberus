@@ -1,0 +1,18 @@
+<div class="centered-container" style="text-align: center; max-width: 600px;">
+    <h1 style="font-size: 3.5rem; letter-spacing: -0.05em; margin-bottom: var(--spacing-md); line-height: 0.9;">
+        <?= $t->trans('WELCOME_TITLE') ?>
+    </h1>
+    
+    <p style="font-size: 1.1rem; opacity: 0.7; max-width: 450px; margin: 0 auto var(--spacing-lg) auto;">
+        <?= $t->trans('WELCOME_SUBTITLE') ?>
+    </p>
+
+    <div style="display: flex; gap: var(--spacing-sm); justify-content: center;">
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="/profile" class="secondary-button"><?= $t->trans('PROFILE') ?></a>
+        <?php else: ?>
+            <a href="/login" class="secondary-button"><?= $t->trans('ACTION_LOGIN') ?></a>
+            <a href="/register" style="border: none; background: #000; color: #fff; padding: var(--spacing-sm) var(--spacing-md); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;"><?= $t->trans('ACTION_SIGNUP') ?></a>
+        <?php endif; ?>
+    </div>
+</div>

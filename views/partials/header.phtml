@@ -1,0 +1,19 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="/"><?= $t->trans('HOME') ?></a></li>
+            <div style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; opacity: 0.5;">
+                <a href="/lang/en" style="border: none; <?= ($_SESSION['lang'] ?? 'en') === 'en' ? 'opacity: 1; font-weight: bold;' : '' ?>">EN</a> |
+                <a href="/lang/fr" style="border: none; <?= ($_SESSION['lang'] ?? '') === 'fr' ? 'opacity: 1; font-weight: bold;' : '' ?>">FR</a> |
+                <a href="/lang/es" style="border: none; <?= ($_SESSION['lang'] ?? '') === 'es' ? 'opacity: 1; font-weight: bold;' : '' ?>">ES</a> |
+                <a href="/lang/de" style="border: none; <?= ($_SESSION['lang'] ?? '') === 'de' ? 'opacity: 1; font-weight: bold;' : '' ?>">DE</a> |
+                <a href="/lang/ar" style="border: none; <?= ($_SESSION['lang'] ?? '') === 'ar' ? 'opacity: 1; font-weight: bold;' : '' ?>">AR</a>
+            </div>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <li><a href="/profile"><?= $t->trans('PROFILE') ?></a></li>
+            <?php else: ?>
+                <li><a href="/login"><?= $t->trans('LOGIN') ?></a></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
+</header>

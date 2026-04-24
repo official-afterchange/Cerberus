@@ -1,0 +1,194 @@
+:root {
+    /* Minimalist Palette */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+    --border-light: #eeeeee;
+    --accent: #000000;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    --radius: 0px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #000000;
+        --text-color: #ffffff;
+        --border-color: #ffffff;
+        --border-light: #222222;
+        --accent: #ffffff;
+    }
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: var(--text-color);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-color);
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* Layout */
+header {
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    justify-content: space-between;
+}
+
+nav a {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    border: none;
+    white-space: nowrap;
+}
+
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    width: 100%;
+}
+
+/* Components */
+.centered-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Forms */
+.minimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.input-field {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+    background: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-bottom-width: 2px;
+}
+
+.input-field::placeholder {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
+}
+
+button {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    min-width: 180px;
+    background-color: var(--accent);
+    color: var(--bg-color);
+    border: 1px solid var(--accent);
+    font-family: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--accent);
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 180px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.secondary-button:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    opacity: 1;
+}

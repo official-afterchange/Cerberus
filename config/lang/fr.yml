@@ -1,0 +1,64 @@
+# ===== ERREURS =====
+MISSING_FIELDS: "Veuillez remplir tous les champs."
+INVALID_EMAIL: "Veuillez fournir une adresse e-mail valide."
+WEAK_PASSWORD: "Le mot de passe doit contenir au moins 8 caractères."
+EMAIL_ALREADY_EXISTS: "Cet e-mail est déjà enregistré."
+USERNAME_ALREADY_TAKEN: "Ce nom d'utilisateur est déjà pris."
+LOGIN_FAILED: "Identifiants invalides. Veuillez réessayer."
+REGISTRATION_FAILED: "Une erreur est survenue. Veuillez réessayer."
+TOO_MANY_REQUESTS: "Trop de tentatives de connexion. Veuillez réessayer plus tard."
+INVALID_RESET_TOKEN: "Jeton de réinitialisation invalide ou expiré."
+
+# ===== SUCCÈS =====
+SUCCESS_REGISTER: "Inscription réussie. Veuillez vous connecter."
+SUCCESS_UPDATE: "Profil mis à jour avec succès."
+PASSWORD_RESET_SUCCESS: "Mot de passe réinitialisé avec succès. Vous pouvez maintenant vous connecter."
+RESET_LINK_SENT: "Si un compte existe, un lien de réinitialisation a été envoyé à votre adresse e-mail."
+
+# ===== NAVIGATION =====
+HOME: "Accueil"
+LOGIN: "Connexion"
+LOGOUT: "Déconnexion"
+REGISTER: "Inscription"
+PROFILE: "Profil"
+
+# ===== BIENVENUE =====
+SITE_TITLE: "AfterChange Template"
+WELCOME_TITLE: "SYSTÈME D'AUTHENTIFICATION<br>MODERNE"
+WELCOME_SUBTITLE: "Un système d'authentification propre, sécurisé et évolutif, conçu pour les applications web modernes."
+
+ACTION_LOGIN: "CONNEXION"
+ACTION_SIGNUP: "INSCRIPTION"
+
+# ===== CONNEXION =====
+LOGIN_TITLE: "CONNEXION"
+USERNAME_OR_EMAIL: "NOM D'UTILISATEUR OU E-MAIL"
+PASSWORD: "MOT DE PASSE"
+REMEMBER_ME: "Se souvenir de moi"
+FORGOT_PASSWORD: "Mot de passe oublié ?"
+SUBMIT_LOGIN: "SE CONNECTER"
+DONT_HAVE_ACCOUNT: "Vous n'avez pas de compte ?"
+
+# ===== INSCRIPTION =====
+REGISTER_TITLE: "INSCRIPTION"
+USERNAME: "NOM D'UTILISATEUR"
+EMAIL: "E-MAIL"
+SUBMIT_REGISTER: "S'INSCRIRE"
+ALREADY_HAVE_ACCOUNT: "Vous avez déjà un compte ?"
+
+# ===== PROFIL =====
+PROFILE_TITLE: "VOTRE PROFIL"
+NEW_PASSWORD_LABEL: "NOUVEAU MOT DE PASSE (LAISSER VIDE POUR CONSERVER L'ACTUEL)"
+SUBMIT_UPDATE: "METTRE À JOUR LE PROFIL"
+
+# ===== RÉINITIALISATION MOT DE PASSE =====
+FORGOT_PASSWORD_DESC: "Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe."
+SEND_RESET_LINK: "Envoyer le lien de réinitialisation"
+BACK_TO_LOGIN: "Retour à la connexion"
+RESET_PASSWORD: "Réinitialiser le mot de passe"
+RESET_PASSWORD_DESC: "Veuillez entrer votre nouveau mot de passe ci-dessous."
+NEW_PASSWORD: "Nouveau mot de passe"
+SUBMIT_RESET: "Réinitialiser le mot de passe"
+
+# ===== PIED DE PAGE =====
+COPYRIGHT: "Tous droits réservés"

@@ -1,0 +1,35 @@
+<div class="centered-container">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-md);"><?= $t->trans('LOGIN_TITLE') ?></h1>
+
+    <?php if (isset($success) && !empty($success)): ?>
+        <div style="background: #000; color: #fff; padding: 10px; margin-bottom: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center;">
+            <?= \htmlspecialchars($success) ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($error) && !empty($error)): ?>
+        <div style="background: #000; color: #fff; padding: 10px; margin-bottom: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center;">
+            <?= \htmlspecialchars($error) ?>
+        </div>
+    <?php endif; ?>
+
+    <form action="/login" method="POST" class="minimal-form">
+        <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>">
+        <input type="text" name="username" placeholder="<?= $t->trans('USERNAME_OR_EMAIL') ?>" class="input-field" required>
+        <input type="password" name="password" placeholder="<?= $t->trans('PASSWORD') ?>" class="input-field" required>
+        
+        <div style="text-align: left; margin: var(--spacing-sm) 0 var(--spacing-md) 0; font-size: 0.9rem; opacity: 0.8;">
+            <label style="display: flex; align-items: center; cursor: pointer; gap: 8px;">
+                <input type="checkbox" name="remember_me" id="remember_me">
+                <span><?= $t->trans('REMEMBER_ME') ?? 'Remember me' ?></span>
+            </label>
+        </div>
+
+        <button type="submit"><?= $t->trans('SUBMIT_LOGIN') ?></button>
+    </form>
+    <p style="margin-top: var(--spacing-md); text-align: center; font-size: 0.8rem; opacity: 0.6;">
+        <a href="/forgot-password" class="text-link" style="color: inherit; text-decoration: underline;"><?= $t->trans('FORGOT_PASSWORD') ?? 'Forgot password?' ?></a>
+        <br><br>
+        <?= $t->trans('DONT_HAVE_ACCOUNT') ?> <a href="/register" class="text-link" style="color: inherit; text-decoration: underline;"><?= $t->trans('REGISTER') ?></a>
+    </p>
+</div>

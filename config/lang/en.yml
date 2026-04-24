@@ -1,0 +1,64 @@
+# ===== ERRORS =====
+MISSING_FIELDS: "Please fill in all fields."
+INVALID_EMAIL: "Please provide a valid email."
+WEAK_PASSWORD: "Password must be at least 8 characters."
+EMAIL_ALREADY_EXISTS: "This email is already registered."
+USERNAME_ALREADY_TAKEN: "This username is already taken."
+LOGIN_FAILED: "Invalid credentials. Please try again."
+REGISTRATION_FAILED: "An error occurred. Please try again."
+TOO_MANY_REQUESTS: "Too many login attempts. Please try again later."
+INVALID_RESET_TOKEN: "Invalid or expired reset token."
+
+# ===== SUCCESS =====
+SUCCESS_REGISTER: "Registration successful. Please login."
+SUCCESS_UPDATE: "Profile updated successfully."
+PASSWORD_RESET_SUCCESS: "Password successfully reset. You can now login."
+RESET_LINK_SENT: "If an account exists, a reset link has been sent to your email."
+
+# ===== NAVIGATION =====
+HOME: "Home"
+LOGIN: "Login"
+LOGOUT: "Logout"
+REGISTER: "Register"
+PROFILE: "Profile"
+
+# ===== WELCOME =====
+SITE_TITLE: "AfterChange Template"
+WELCOME_TITLE: "MODERN AUTH<br>SYSTEM"
+WELCOME_SUBTITLE: "A clean, secure and scalable authentication system built for modern web applications."
+
+ACTION_LOGIN: "LOGIN"
+ACTION_SIGNUP: "SIGN UP"
+
+# ===== LOGIN =====
+LOGIN_TITLE: "CONNECTION"
+USERNAME_OR_EMAIL: "USERNAME OR EMAIL"
+PASSWORD: "PASSWORD"
+REMEMBER_ME: "Remember me"
+FORGOT_PASSWORD: "Forgot password?"
+SUBMIT_LOGIN: "LOG IN"
+DONT_HAVE_ACCOUNT: "Don't have an account?"
+
+# ===== REGISTER =====
+REGISTER_TITLE: "REGISTRATION"
+USERNAME: "USERNAME"
+EMAIL: "EMAIL"
+SUBMIT_REGISTER: "SIGN UP"
+ALREADY_HAVE_ACCOUNT: "Already have an account?"
+
+# ===== PROFILE =====
+PROFILE_TITLE: "YOUR PROFILE"
+NEW_PASSWORD_LABEL: "NEW PASSWORD (LEAVE EMPTY TO KEEP CURRENT)"
+SUBMIT_UPDATE: "UPDATE PROFILE"
+
+# ===== PASSWORD RESET =====
+FORGOT_PASSWORD_DESC: "Enter your email address and we will send you a link to reset your password."
+SEND_RESET_LINK: "Send Reset Link"
+BACK_TO_LOGIN: "Back to login"
+RESET_PASSWORD: "Reset Password"
+RESET_PASSWORD_DESC: "Please enter your new password below."
+NEW_PASSWORD: "New Password"
+SUBMIT_RESET: "Reset Password"
+
+# ===== FOOTER =====
+COPYRIGHT: "All Rights Reserved"

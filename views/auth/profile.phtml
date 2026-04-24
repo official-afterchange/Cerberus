@@ -1,0 +1,32 @@
+<div class="centered-container">
+    <h1 style="text-align: center; margin-bottom: var(--spacing-md);"><?= $t->trans('PROFILE_TITLE') ?></h1>
+
+    <?php if (isset($success) && !empty($success)): ?>
+        <div style="background: #000; color: #fff; padding: 10px; margin-bottom: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center;">
+            <?= \htmlspecialchars($success) ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($error) && !empty($error)): ?>
+        <div style="background: #000; color: #fff; padding: 10px; margin-bottom: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center;">
+            <?= \htmlspecialchars($error) ?>
+        </div>
+    <?php endif; ?>
+
+    <form action="/profile" method="POST" class="minimal-form">
+        <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>">
+        <input type="text" name="username" value="<?= \htmlspecialchars($user->username) ?>" placeholder="<?= $t->trans('USERNAME') ?>" required class="input-field">
+        
+        <label style="font-size: 0.7rem; opacity: 0.6; margin-bottom: 5px; display: block; margin-top: 15px;"><?= $t->trans('EMAIL') ?></label>
+        <input type="email" name="email" value="<?= \htmlspecialchars($user->email) ?>" class="input-field" required>
+        
+        <label style="font-size: 0.7rem; opacity: 0.6; margin-bottom: 5px; display: block; margin-top: 15px;"><?= $t->trans('NEW_PASSWORD_LABEL') ?></label>
+        <input type="password" name="password" class="input-field">
+        
+        <button type="submit"><?= $t->trans('SUBMIT_UPDATE') ?></button>
+    </form>
+    
+    <div style="margin-top: var(--spacing-xl); text-align: center;">
+        <a href="/logout" class="secondary-button"><?= $t->trans('LOGOUT') ?></a>
+    </div>
+</div>
