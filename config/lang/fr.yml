@@ -8,6 +8,18 @@ LOGIN_FAILED: "Identifiants invalides. Veuillez réessayer."
 REGISTRATION_FAILED: "Une erreur est survenue. Veuillez réessayer."
 TOO_MANY_REQUESTS: "Trop de tentatives de connexion. Veuillez réessayer plus tard."
 INVALID_RESET_TOKEN: "Jeton de réinitialisation invalide ou expiré."
+INTERNAL_ERROR: "Une erreur est survenue. Veuillez réessayer plus tard."
+PAGE_NOT_FOUND: "Page non trouvée."
+ACCESS_FORBIDDEN: "Vous n'avez pas la permission d'accéder à cette ressource."
+
+TITLE_CLIENT_NOT_FOUND: "Client introuvable"
+CLIENT_NOT_FOUND: "Le client spécifié n'est pas enregistré."
+
+TITLE_INVALID_REDIRECT_URI: "URI de redirection invalide"
+INVALID_REDIRECT_URI: "L'URI de redirection fournie n'est pas enregistrée auprès du client."
+
+TITLE_ACCESS_DENIED: "Accès refusé"
+ACCESS_DENIED: "Vous n'avez pas autorisé cette application à accéder à vos informations."
 
 # ===== SUCCÈS =====
 SUCCESS_REGISTER: "Inscription réussie. Veuillez vous connecter."
@@ -62,3 +74,16 @@ SUBMIT_RESET: "Réinitialiser le mot de passe"
 
 # ===== PIED DE PAGE =====
 COPYRIGHT: "Tous droits réservés"
+
+# ===== AUTORISATION (OAUTH2) =====
+AUTH_TITLE: "AUTORISATION"
+AUTH_SUBTITLE: "souhaite accéder à votre compte."
+AUTH_PERMISSIONS_HEADER: "Cette application pourra :"
+SCOPE_PROFILE_NAME: "Profil public"
+SCOPE_PROFILE_DESC: "Nom, photo de profil et identifiant"
+SCOPE_EMAIL_NAME: "Adresse e-mail"
+SCOPE_EMAIL_DESC: "Accéder à votre adresse e-mail principale"
+AUTH_SUBMIT: "AUTORISER L'ACCÈS"
+AUTH_CANCEL: "ANNULER"
+AUTH_DISCLAIMER: "En autorisant, vous permettez à cette application d'utiliser vos informations conformément à leurs conditions d'utilisation et politique de confidentialité."
+INVALID_RESPONSE_TYPE: "Le type de réponse n'est pas valide."

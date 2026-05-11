@@ -31,7 +31,7 @@ abstract class Model
     public function getFillable(): array
     {
         $ref = new \ReflectionClass($this);
-        $props = $ref->getProperties(\ReflectionProperty::IS_PUBLIC | \ReflectionProperty::IS_PROTECTED);
+        $props = $ref->getProperties(\ReflectionProperty::IS_PUBLIC);
 
         return \array_map(fn($p) => $p->getName(), $props);
     }

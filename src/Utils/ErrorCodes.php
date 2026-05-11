@@ -14,4 +14,5 @@ class ErrorCodes
     public const WEAK_PASSWORD = 'WEAK_PASSWORD';
     public const LOGIN_FAILED = 'LOGIN_FAILED';
     public const TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS';
+    public const INTERNAL_ERROR = 'INTERNAL_ERROR';
 }

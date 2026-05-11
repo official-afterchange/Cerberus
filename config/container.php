@@ -89,22 +89,6 @@ $containerBuilder->addDefinitions([
         return new Mailer(new \Symfony\Component\Mailer\Mailer($transport));
     },
 
-    RoleRepository::class => function ($c) {
-        return new RoleRepository($c->get(PDO::class));
-    },
-
-    PermissionRepository::class => function ($c) {
-        return new PermissionRepository($c->get(PDO::class));
-    },
-
-    RoleService::class => function ($c) {
-        return new RoleService($c->get(RoleRepository::class));
-    },
-
-    PermissionService::class => function ($c) {
-        return new PermissionService($c->get(PermissionRepository::class));
-    },
-
     ProfileController::class => function ($c) {
         return new ProfileController(
             $c->get(PhpRenderer::class),

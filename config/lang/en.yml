@@ -8,6 +8,18 @@ LOGIN_FAILED: "Invalid credentials. Please try again."
 REGISTRATION_FAILED: "An error occurred. Please try again."
 TOO_MANY_REQUESTS: "Too many login attempts. Please try again later."
 INVALID_RESET_TOKEN: "Invalid or expired reset token."
+INTERNAL_ERROR: "An error occurred. Please try again later."
+PAGE_NOT_FOUND: "Page not found."
+ACCESS_FORBIDDEN: "You do not have permission to access this resource."
+
+TITLE_CLIENT_NOT_FOUND: "Client not found."
+CLIENT_NOT_FOUND: "The specified client is not registered."
+
+TITLE_INVALID_REDIRECT_URI: "Invalid redirect URI."
+INVALID_REDIRECT_URI: "The provided redirect URI is not registered with the client."
+
+TITLE_ACCESS_DENIED: "Access denied."
+ACCESS_DENIED: "You have not authorized this application to access your information."
 
 # ===== SUCCESS =====
 SUCCESS_REGISTER: "Registration successful. Please login."
@@ -62,3 +74,16 @@ SUBMIT_RESET: "Reset Password"
 
 # ===== FOOTER =====
 COPYRIGHT: "All Rights Reserved"
+
+# ===== AUTHORIZATION (OAUTH2) =====
+AUTH_TITLE: "AUTHORIZATION"
+AUTH_SUBTITLE: "wants to access your account."
+AUTH_PERMISSIONS_HEADER: "This application will be able to:"
+SCOPE_PROFILE_NAME: "Public profile"
+SCOPE_PROFILE_DESC: "Name, profile picture and identifier"
+SCOPE_EMAIL_NAME: "Email address"
+SCOPE_EMAIL_DESC: "Access your primary email address"
+AUTH_SUBMIT: "AUTHORIZE ACCESS"
+AUTH_CANCEL: "CANCEL"
+AUTH_DISCLAIMER: "By authorizing, you allow this application to use your information in accordance with their terms of service and privacy policy."
+INVALID_RESPONSE_TYPE: "The response type is not valid."

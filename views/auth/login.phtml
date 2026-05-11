@@ -14,6 +14,7 @@
     <?php endif; ?>
 
     <form action="/login" method="POST" class="minimal-form">
+        <input type="hidden" name="redirect" value="<?= htmlspecialchars($_GET['redirect'] ?? '') ?>">
         <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>">
         <input type="text" name="username" placeholder="<?= $t->trans('USERNAME_OR_EMAIL') ?>" class="input-field" required>
         <input type="password" name="password" placeholder="<?= $t->trans('PASSWORD') ?>" class="input-field" required>

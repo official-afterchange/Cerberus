@@ -70,6 +70,8 @@ class AuthService extends Service
         $user->username = $data['username'];
         $user->email = $data['email'];
         $user->password = \password_hash($data['password'], PASSWORD_BCRYPT);
+        $user->created_at = new \DateTime();
+        $user->updated_at = new \DateTime();
 
         if (!$this->repository->save($user)) {
             throw new AuthException(ErrorCodes::REGISTRATION_FAILED);
@@ -97,6 +99,7 @@ class AuthService extends Service
 
         $user->username = $data['username'];
         $user->email = $data['email'];
+        $user->updated_at = new \DateTime();
 
         if (!empty($data['password'])) {
             $user->password = \password_hash($data['password'], PASSWORD_BCRYPT);

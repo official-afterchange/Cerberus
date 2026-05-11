@@ -27,7 +27,15 @@ class Translator
 
     public function trans(?string $key): string
     {
-        if ($key === null) return '';
+        if ($key === null)
+            return '';
         return $this->messages[$key] ?? $this->fallbackMessages[$key] ?? $key;
+    }
+
+    public function hasTrans(?string $key): bool
+    {
+        if ($key === null)
+            return false;
+        return isset($this->messages[$key]) || isset($this->fallbackMessages[$key]);
     }
 }

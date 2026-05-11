@@ -27,7 +27,7 @@ class RateLimitMiddleware implements MiddlewareInterface
         $this->decaySeconds = $decaySeconds;
 
         if (!is_dir($this->storagePath)) {
-            mkdir($this->storagePath, 0755, true);
+            mkdir($this->storagePath, 0775, true);
         }
     }
 
@@ -55,6 +55,12 @@ class RateLimitMiddleware implements MiddlewareInterface
 
         if ($data['attempts'] >= $this->maxAttempts) {
             $_SESSION['flash_error'] = $this->translator->trans(ErrorCodes::TOO_MANY_REQUESTS);
+            $response = new SlimResponse();
+            return $response->withHeader('Location', '/login')->withStatus(302);
+        }
+
+        if (!is_dir($this->storagePath)) {
+            $_SESSION['flash_error'] = $this->translator->trans(ErrorCodes::INTERNAL_ERROR);
             $response = new SlimResponse();
             return $response->withHeader('Location', '/login')->withStatus(302);
         }

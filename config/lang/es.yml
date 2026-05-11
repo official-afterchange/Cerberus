@@ -8,6 +8,18 @@ LOGIN_FAILED: "Credenciales inválidas. Inténtalo de nuevo."
 REGISTRATION_FAILED: "Ocurrió un error. Por favor, inténtalo de nuevo."
 TOO_MANY_REQUESTS: "Demasiados intentos de inicio de sesión. Inténtalo más tarde."
 INVALID_RESET_TOKEN: "Token de restablecimiento inválido o expirado."
+INTERNAL_ERROR: "Se ha producido un error. Por favor, inténtelo de nuevo más tarde."
+PAGE_NOT_FOUND: "Página no encontrada."
+ACCESS_FORBIDDEN: "No tienes permiso para acceder a este recurso."
+
+TITLE_CLIENT_NOT_FOUND: "Cliente no encontrado."
+CLIENT_NOT_FOUND: "El cliente especificado no está registrado."
+
+TITLE_INVALID_REDIRECT_URI: "URI de redirección inválida."
+INVALID_REDIRECT_URI: "La URI de redirección proporcionada no está registrada con el cliente."
+
+TITLE_ACCESS_DENIED: "Acceso denegado."
+ACCESS_DENIED: "No has autorizado a esta aplicación para acceder a tu información."
 
 # ===== ÉXITO =====
 SUCCESS_REGISTER: "Registro exitoso. Por favor, inicia sesión."
@@ -62,3 +74,16 @@ SUBMIT_RESET: "Restablecer contraseña"
 
 # ===== PIE DE PÁGINA =====
 COPYRIGHT: "Todos los derechos reservados"
+
+# ===== AUTORIZACIÓN (OAUTH2) =====
+AUTH_TITLE: "AUTORIZACIÓN"
+AUTH_SUBTITLE: "quiere acceder a su cuenta."
+AUTH_PERMISSIONS_HEADER: "Esta aplicación podrá:"
+SCOPE_PROFILE_NAME: "Perfil público"
+SCOPE_PROFILE_DESC: "Nombre, foto de perfil e identificador"
+SCOPE_EMAIL_NAME: "Correo electrónico"
+SCOPE_EMAIL_DESC: "Acceder a su dirección de correo electrónico principal"
+AUTH_SUBMIT: "AUTORIZAR ACCESO"
+AUTH_CANCEL: "CANCELAR"
+AUTH_DISCLAIMER: "Al autorizar, permite que esta aplicación utilice su información de acuerdo con sus términos de servicio y política de privacidad."
+INVALID_RESPONSE_TYPE: "El tipo de respuesta no es válido."

@@ -34,9 +34,12 @@ return function (App $app): void {
         ->add(AuthMiddleware::class);
     $app->post('/profile', [Afterchange\Template\Controllers\ProfileController::class, 'update'])->add(AuthMiddleware::class);
 
-    $app->group('/oauth', function () use ($app) {
-        $app->get('/authorize', [Afterchange\Template\Controllers\OAuthController::class, 'authorize']);
-        $app->post('/authorize', [Afterchange\Template\Controllers\OAuthController::class, 'authorize']);
+    $app->group('/auth', function () use ($app) {
+        $app->get('/authorize', [Afterchange\Template\Controllers\OAuthController::class, 'showAuthorize'])->add(AuthMiddleware::class);
+        $app->post('/authorize/confirm', [Afterchange\Template\Controllers\OAuthController::class, 'authorize'])->add(AuthMiddleware::class);
+        $app->post('/authorize/deny', [Afterchange\Template\Controllers\OAuthController::class, 'deny'])->add(AuthMiddleware::class);
+
         $app->post('/token', [Afterchange\Template\Controllers\OAuthController::class, 'token']);
+        $app->get('/userinfo', [Afterchange\Template\Controllers\OAuthController::class, 'userinfo']);
     });
 };

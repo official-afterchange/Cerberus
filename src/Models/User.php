@@ -12,6 +12,6 @@ class User extends Model
     public ?string $remember_token = null;
     public ?string $reset_token = null;
     public ?string $reset_expires_at = null;
-    public ?string $created_at = null;
+    public \DateTime $created_at;
     public \DateTime $updated_at;
 }

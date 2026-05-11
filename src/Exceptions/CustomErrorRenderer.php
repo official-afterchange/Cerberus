@@ -19,39 +19,33 @@ class CustomErrorRenderer implements ErrorRendererInterface
     public function __invoke(Throwable $exception, bool $displayErrorDetails): string
     {
         $code = $exception->getCode();
-        if ($code == 0) {
+        if ($code < 100 || $code > 599) {
             $code = 500;
         }
 
-        $template = 'errors/500.phtml';
-        
+        $messageKey = $exception->getMessage();
+
         if ($exception instanceof \Slim\Exception\HttpNotFoundException) {
             $code = 404;
-            $template = 'errors/404.phtml';
+            $messageKey = 'PAGE_NOT_FOUND';
         } elseif ($exception instanceof \Slim\Exception\HttpForbiddenException || $code === 403) {
             $code = 403;
-            $template = 'errors/403.phtml';
+            $messageKey = 'ACCESS_FORBIDDEN';
         }
 
-        $title = $code . ' - Error';
-        if ($code === 404) $title = '404 - Not Found';
-        if ($code === 403) $title = '403 - Forbidden';
+        if ($code === 500)
+            $messageKey = 'INTERNAL_ERROR';
 
-        $errorMessage = $displayErrorDetails ? $exception->getMessage() : 'An unexpected error occurred.';
 
         $data = [
-            'title' => $title,
             'code' => $code,
-            'message' => $errorMessage,
+            'title' => 'TITLE_' . $messageKey,
+            'message' => $messageKey,
+            'debug' => $displayErrorDetails,
             'csrf_token' => $_SESSION['csrf_token'] ?? null,
         ];
 
-        try {
-            $response = new \Slim\Psr7\Response();
-            $response = $this->view->render($response, $template, $data);
-            return (string) $response->getBody();
-        } catch (\Throwable $e) {
-            return "<h1>$code Error</h1><p>" . htmlspecialchars($errorMessage) . "</p>";
-        }
+        $response = new \Slim\Psr7\Response();
+        return (string) $this->view->render($response, 'error.phtml', $data)->getBody();
     }
 }

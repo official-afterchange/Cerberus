@@ -8,6 +8,18 @@ LOGIN_FAILED: "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
 REGISTRATION_FAILED: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
 TOO_MANY_REQUESTS: "Zu viele Anmeldeversuche. Bitte versuchen Sie es später erneut."
 INVALID_RESET_TOKEN: "Ungültiger oder abgelaufener Reset-Token."
+INTERNAL_ERROR: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal."
+PAGE_NOT_FOUND: "Seite nicht gefunden."
+ACCESS_FORBIDDEN: "Sie haben keine Berechtigung, auf diese Ressource zuzugreifen."
+
+TITLE_CLIENT_NOT_FOUND: "Client nicht gefunden."
+CLIENT_NOT_FOUND: "Der angegebene Client ist nicht registriert."
+
+TITLE_INVALID_REDIRECT_URI: "Ungültige Redirect-URI."
+INVALID_REDIRECT_URI: "Die angegebene Redirect-URI ist nicht beim Client registriert."
+
+TITLE_ACCESS_DENIED: "Zugriff verweigert."
+ACCESS_DENIED: "Sie haben dieser Anwendung nicht den Zugriff auf Ihre Informationen gestattet."
 
 # ===== ERFOLG =====
 SUCCESS_REGISTER: "Registrierung erfolgreich. Bitte melden Sie sich an."
@@ -62,3 +74,16 @@ SUBMIT_RESET: "Passwort zurücksetzen"
 
 # ===== FOOTER =====
 COPYRIGHT: "Alle Rechte vorbehalten"
+
+# ===== AUTORISIERUNG (OAUTH2) =====
+AUTH_TITLE: "AUTORISIERUNG"
+AUTH_SUBTITLE: "möchte auf Ihr Konto zugreifen."
+AUTH_PERMISSIONS_HEADER: "Diese Anwendung kann:"
+SCOPE_PROFILE_NAME: "Öffentliches Profil"
+SCOPE_PROFILE_DESC: "Name, Profilbild und Kennung"
+SCOPE_EMAIL_NAME: "E-Mail-Adresse"
+SCOPE_EMAIL_DESC: "Auf Ihre primäre E-Mail-Adresse zugreifen"
+AUTH_SUBMIT: "ZUGRIFF AUTORISIEREN"
+AUTH_CANCEL: "ABBRECHEN"
+AUTH_DISCLAIMER: "Durch die Autorisierung erlauben Sie dieser Anwendung, Ihre Informationen gemäß deren Nutzungsbedingungen und Datenschutzrichtlinien zu verwenden."
+INVALID_RESPONSE_TYPE: "Der Antworttyp ist ungültig."

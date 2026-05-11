@@ -51,7 +51,9 @@ class LoginController extends Controller
                 $this->setRememberCookie($token);
             }
 
-            return $response->withHeader('Location', '/profile')->withStatus(302);
+            $redirectUri = $data['redirect'] ?? '/profile';
+
+            return $response->withHeader('Location', $redirectUri)->withStatus(302);
         } catch (AuthException $e) {
             $this->flash('error', $this->translator->trans($e->getErrorCode()));
             return $response->withHeader('Location', '/login')->withStatus(302);

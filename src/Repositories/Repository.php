@@ -37,7 +37,11 @@ abstract class Repository
         $parts = \explode('\\', $modelClass);
         $shortName = \end($parts);
 
-        return \strtolower($shortName) . 's';
+        // Expression régulière : on cherche une minuscule ([a-z]) suivie d'une majuscule ([A-Z])
+        // On remplace par "minuscule_majuscule"
+        $snakeCase = \strtolower(\preg_replace('/([a-z])([A-Z])/', '$1_$2', $shortName));
+
+        return $snakeCase . 's';
     }
 
     final public function find(int $id): ?Model
@@ -110,7 +114,7 @@ abstract class Repository
         $res = $stmt->execute($formattedData);
 
         if ($res && \property_exists($model, 'id') && empty($model->id)) {
-            $model->id = (int)$this->pdo->lastInsertId();
+            $model->id = (int) $this->pdo->lastInsertId();
         }
 
         return $res;
@@ -129,7 +133,7 @@ abstract class Repository
         unset($data['id']);
 
         $formattedData = $this->formatData($data);
-        $set = \implode(', ', \array_map(fn (string $col) => "$col = :$col", \array_keys($formattedData)));
+        $set = \implode(', ', \array_map(fn(string $col) => "$col = :$col", \array_keys($formattedData)));
 
         $stmt = $this->pdo->prepare("UPDATE {$this->getTable()} SET $set WHERE id = :id");
         $formattedData['id'] = $id;

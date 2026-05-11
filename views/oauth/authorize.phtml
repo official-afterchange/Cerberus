@@ -1,0 +1,40 @@
+<div class="centered-container">
+    <h1 style="text-align: center;"><?= $t->trans('AUTH_TITLE') ?></h1>
+    <p style="text-align: center; margin-bottom: var(--spacing-lg); opacity: 0.8;">
+        <strong><?= $t->trans('AUTH_SUBTITLE') ?></strong>
+    </p>
+
+    <section style="margin-bottom: var(--spacing-lg); width: 100%;">
+        <h3
+            style="font-size: 0.75rem; text-transform: uppercase; border-bottom: 1px solid var(--border-light); padding-bottom: 5px;">
+            <?= $t->trans('AUTH_PERMISSIONS_HEADER') ?>
+        </h3>
+        <ul style="list-style: none; margin-top: var(--spacing-sm);">
+            <?php foreach ($scopes as $scope) { ?>
+                <li style="padding: var(--spacing-xs) 0; display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 1.2rem;">✓</span>
+                    <div>
+                        <strong><?= $t->trans($scope->name) ?></strong>
+                        <div style="font-size: 0.8rem; opacity: 0.6;"><?= $t->trans($scope->description) ?></div>
+                </div>
+            </li>
+            <?php } ?>
+        </ul>
+    </section>
+
+    <form action="/oauth/authorize/confirm" method="POST" class="minimal-form">
+        <input type="hidden" name="client_id" value="<?= $clientId ?>">
+        <input type="hidden" name="scope" value="<?= implode(' ', array_map(fn($s) => $s->scope, $scopes)) ?>">
+        <input type="hidden" name="response_type" value="<?= $responseType ?>">
+        <input type="hidden" name="redirect_uri" value="<?= $redirectUri ?>">
+
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); width: 100%;">
+            <button type="submit" name="allow" value="true"><?= $t->trans('AUTH_SUBMIT') ?></button>
+            <a href="/oauth/authorize/cancel" class="secondary-button"><?= $t->trans('AUTH_CANCEL') ?></a>
+        </div>
+    </form>
+
+    <p style="margin-top: var(--spacing-lg); font-size: 0.7rem; opacity: 0.5; text-align: center; line-height: 1.4;">
+        <?= $t->trans('AUTH_DISCLAIMER') ?>
+    </p>
+</div>

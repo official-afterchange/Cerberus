@@ -12,7 +12,9 @@
             <a href="/profile" class="secondary-button"><?= $t->trans('PROFILE') ?></a>
         <?php else: ?>
             <a href="/login" class="secondary-button"><?= $t->trans('ACTION_LOGIN') ?></a>
-            <a href="/register" style="border: none; background: #000; color: #fff; padding: var(--spacing-sm) var(--spacing-md); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;"><?= $t->trans('ACTION_SIGNUP') ?></a>
+            <a href="/register" style="border: none; background: #000; color: #fff; padding: var(--spacing-sm) var(--spacing-md); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">
+                     <?= $t->trans('ACTION_SIGNUP') ?>
+            </a>
         <?php endif; ?>
     </div>
 </div>
