@@ -1,0 +1,90 @@
+{
+    "name": "Afterchange\\Template\\Repositories\\OAuthScopeRepository",
+    "line": 13,
+    "short_desc": "Handles database queries for OAuth 2.0 permission scopes.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Repositories",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Repositories\/OAuthScopeRepository.php",
+    "relative_file": null,
+    "hash": "e5c2bd363b0c9b51772373d5e967bbd19fcff772",
+    "parent": "Afterchange\\Template\\Repositories\\Repository",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "OAuthScope": "Afterchange\\Template\\Models\\OAuthScope",
+        "PDO": "PDO"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getDefaultScopes": {
+            "name": "getDefaultScopes",
+            "line": 20,
+            "short_desc": "Returns all scopes marked as default.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of hydrated default scope models.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "findByScopeNames": {
+            "name": "findByScopeNames",
+            "line": 42,
+            "short_desc": "Finds scopes matching the given list of scope name strings.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of hydrated scope models matching the provided names.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "scopeNames": {
+                    "name": "scopeNames",
+                    "line": 42,
+                    "short_desc": "The scope identifiers to look up (e.g., ['openid', 'profile']).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

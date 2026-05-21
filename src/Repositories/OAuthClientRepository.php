@@ -5,11 +5,19 @@ declare(strict_types=1);
 namespace Afterchange\Template\Repositories;
 
 use Afterchange\Template\Models\OAuthClient;
-use Afterchange\Template\Models\OAuthClientRedirect;
 use PDO;
 
-class OAuthClientRepository extends Repository
+/**
+ * Handles database queries for OAuth 2.0 client applications and their redirect URIs.
+ */
+final class OAuthClientRepository extends Repository
 {
+    /**
+     * Finds an OAuth client by its public client identifier.
+     *
+     * @param string $clientId The public client_id to look up.
+     * @return OAuthClient|null The hydrated client model, or null if not found.
+     */
     public function findByClientId(string $clientId): ?OAuthClient
     {
         $stmt = $this->pdo->prepare("SELECT * FROM {$this->getTable()} WHERE client_id = :client_id");
@@ -26,9 +34,16 @@ class OAuthClientRepository extends Repository
         return $client;
     }
 
+    /**
+     * Checks whether a given redirect URI is registered for the specified client.
+     *
+     * @param OAuthClient $client      The client whose allowed redirect URIs are checked.
+     * @param string      $redirectUri The redirect URI to validate.
+     * @return bool                    True if the URI is registered, false otherwise.
+     */
     public function isRedirectUriValid(OAuthClient $client, string $redirectUri): bool
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM oauth_client_redirects WHERE client_internal_id = :client_internal_id AND redirect_uri = :redirect_uri");
+        $stmt = $this->pdo->prepare('SELECT * FROM oauth_client_redirects WHERE client_internal_id = :client_internal_id AND redirect_uri = :redirect_uri');
         $stmt->execute(['client_internal_id' => $client->id, 'redirect_uri' => $redirectUri]);
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
 

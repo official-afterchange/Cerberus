@@ -1,0 +1,85 @@
+{
+    "name": "Afterchange\\Template\\Utils\\Env",
+    "line": 10,
+    "short_desc": "Provides typed access to environment variables with fallback default values.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Utils",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Utils\/Env.php",
+    "relative_file": null,
+    "hash": "626f1018fb4d58cf5906efbe2db87a666dda59fd",
+    "parent": null,
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "get": {
+            "name": "get",
+            "line": 19,
+            "short_desc": "Retrieves an environment variable, casting boolean and null string literals to their native types.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "The typed value, or the default if the variable is absent.",
+            "tags": [],
+            "see": [],
+            "modifiers": 9,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "key": {
+                    "name": "key",
+                    "line": 19,
+                    "short_desc": "The environment variable name.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "default": {
+                    "name": "default",
+                    "line": 19,
+                    "short_desc": "The value to return if the variable is not set (default: null).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "mixed",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

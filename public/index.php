@@ -8,6 +8,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $container = require __DIR__ . '/../config/container.php';
 
+use Afterchange\Template\Exceptions\CustomErrorHandler;
+use Afterchange\Template\Exceptions\CustomErrorRenderer;
 use Slim\Factory\AppFactory;
 
 AppFactory::setContainer($container);
@@ -19,16 +21,6 @@ $app->addRoutingMiddleware();
 
 $settings = $container->get('settings');
 
-if ($settings['app']['debug']) {
-    ini_set('display_errors', '1');
-    ini_set('display_startup_errors', '1');
-} else {
-    ini_set('display_errors', '0');
-    ini_set('display_startup_errors', '0');
-}
-
-error_reporting(E_ALL);
-
 $errorMiddleware = $app->addErrorMiddleware(
     $settings['app']['debug'],
     true,
@@ -36,15 +28,20 @@ $errorMiddleware = $app->addErrorMiddleware(
     $container->get(\Psr\Log\LoggerInterface::class)
 );
 
-$errorHandler = $errorMiddleware->getDefaultErrorHandler();
-
-$errorHandler->registerErrorRenderer(
-    'text/html', 
-    new \Afterchange\Template\Exceptions\CustomErrorRenderer(
-        $container->get(\Slim\Views\PhpRenderer::class)
-    )
+// Register our handler — it handles OAuth 302 redirects then delegates
+// to the renderer pipeline for everything else.
+$errorHandler = new CustomErrorHandler(
+    $app->getCallableResolver(),
+    $app->getResponseFactory(),
+    $container->get(\Psr\Log\LoggerInterface::class)
 );
 
+$errorHandler->registerErrorRenderer(
+    'text/html',
+    new CustomErrorRenderer($container->get(\Slim\Views\PhpRenderer::class))
+);
 $errorHandler->forceContentType('text/html');
+
+$errorMiddleware->setDefaultErrorHandler($errorHandler);
 
 $app->run();

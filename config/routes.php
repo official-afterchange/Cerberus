@@ -2,44 +2,53 @@
 
 declare(strict_types=1);
 
+use Afterchange\Template\Controllers\ForgotPasswordController;
+use Afterchange\Template\Controllers\HomeController;
+use Afterchange\Template\Controllers\LangController;
+use Afterchange\Template\Controllers\LoginController;
+use Afterchange\Template\Controllers\OAuthController;
+use Afterchange\Template\Controllers\ProfileController;
+use Afterchange\Template\Controllers\RegisterController;
+use Afterchange\Template\Controllers\ResetPasswordController;
 use Afterchange\Template\Middlewares\AuthMiddleware;
 use Afterchange\Template\Middlewares\CsrfMiddleware;
 use Afterchange\Template\Middlewares\RateLimitMiddleware;
 use Afterchange\Template\Middlewares\RememberMeMiddleware;
 use Slim\App;
+use Slim\Routing\RouteCollectorProxy;
 
 return function (App $app): void {
     $app->add(CsrfMiddleware::class);
     $app->add(RememberMeMiddleware::class);
 
-    $app->get('/', [Afterchange\Template\Controllers\HomeController::class, 'index']);
-    $app->get('/register', [Afterchange\Template\Controllers\RegisterController::class, 'show']);
-    $app->post('/register', [Afterchange\Template\Controllers\RegisterController::class, 'register']);
+    $app->get('/', [HomeController::class, 'index']);
+    $app->get('/register', [RegisterController::class, 'show']);
+    $app->post('/register', [RegisterController::class, 'register']);
 
-    $app->get('/login', [Afterchange\Template\Controllers\LoginController::class, 'show']);
-    $app->post('/login', [Afterchange\Template\Controllers\LoginController::class, 'login'])->add(RateLimitMiddleware::class);
+    $app->get('/login', [LoginController::class, 'show']);
+    $app->post('/login', [LoginController::class, 'login'])->add(RateLimitMiddleware::class);
 
-    $app->get('/logout', [Afterchange\Template\Controllers\LoginController::class, 'logout']);
-    $app->get('/lang/{lang}', [Afterchange\Template\Controllers\LangController::class, 'switch']);
+    $app->get('/logout', [LoginController::class, 'logout']);
+    $app->get('/lang/{lang}', [LangController::class, 'switch']);
 
-    $app->get('/forgot-password', [Afterchange\Template\Controllers\ForgotPasswordController::class, 'show']);
-    $app->post('/forgot-password', [Afterchange\Template\Controllers\ForgotPasswordController::class, 'sendLink'])
+    $app->get('/forgot-password', [ForgotPasswordController::class, 'show']);
+    $app->post('/forgot-password', [ForgotPasswordController::class, 'sendLink'])
         ->add(RateLimitMiddleware::class);
 
-    $app->get('/reset-password', [Afterchange\Template\Controllers\ResetPasswordController::class, 'show']);
-    $app->post('/reset-password', [Afterchange\Template\Controllers\ResetPasswordController::class, 'reset'])
+    $app->get('/reset-password', [ResetPasswordController::class, 'show']);
+    $app->post('/reset-password', [ResetPasswordController::class, 'reset'])
         ->add(RateLimitMiddleware::class);
 
-    $app->get('/profile', [Afterchange\Template\Controllers\ProfileController::class, 'show'])
+    $app->get('/profile', [ProfileController::class, 'show'])
         ->add(AuthMiddleware::class);
-    $app->post('/profile', [Afterchange\Template\Controllers\ProfileController::class, 'update'])->add(AuthMiddleware::class);
+    $app->post('/profile', [ProfileController::class, 'update'])->add(AuthMiddleware::class);
 
-    $app->group('/auth', function () use ($app) {
-        $app->get('/authorize', [Afterchange\Template\Controllers\OAuthController::class, 'showAuthorize'])->add(AuthMiddleware::class);
-        $app->post('/authorize/confirm', [Afterchange\Template\Controllers\OAuthController::class, 'authorize'])->add(AuthMiddleware::class);
-        $app->post('/authorize/deny', [Afterchange\Template\Controllers\OAuthController::class, 'deny'])->add(AuthMiddleware::class);
+    $app->group('/oauth', function (RouteCollectorProxy $group): void {
+        $group->get('/authorize', [OAuthController::class, 'showAuthorize'])->add(AuthMiddleware::class);
+        $group->post('/authorize/confirm', [OAuthController::class, 'authorize'])->add(AuthMiddleware::class);
+        $group->post('/authorize/deny', [OAuthController::class, 'deny'])->add(AuthMiddleware::class);
 
-        $app->post('/token', [Afterchange\Template\Controllers\OAuthController::class, 'token']);
-        $app->get('/userinfo', [Afterchange\Template\Controllers\OAuthController::class, 'userinfo']);
+        $group->post('/token', [OAuthController::class, 'token']);
+        $group->get('/userinfo', [OAuthController::class, 'userinfo']);
     });
 };

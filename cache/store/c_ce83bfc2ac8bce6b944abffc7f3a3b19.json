@@ -1,0 +1,129 @@
+{
+    "name": "Afterchange\\Template\\Middlewares\\RememberMeMiddleware",
+    "line": 16,
+    "short_desc": "Restores a user session from a remember-me cookie if no active session exists.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Middlewares",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Middlewares\/RememberMeMiddleware.php",
+    "relative_file": null,
+    "hash": "208bfbb040c606370c39dcda10b39bc60acff085",
+    "parent": null,
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "AuthService": "Afterchange\\Template\\Services\\AuthService",
+        "Response": "Psr\\Http\\Message\\ResponseInterface",
+        "Request": "Psr\\Http\\Message\\ServerRequestInterface",
+        "MiddlewareInterface": "Psr\\Http\\Server\\MiddlewareInterface",
+        "Handler": "Psr\\Http\\Server\\RequestHandlerInterface"
+    },
+    "errors": [],
+    "interfaces": {
+        "Psr\\Http\\Server\\MiddlewareInterface": "Psr\\Http\\Server\\MiddlewareInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 25,
+            "short_desc": "Initializes the middleware with the authentication service.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "authService": {
+                    "name": "authService",
+                    "line": 25,
+                    "short_desc": "Handles token validation and session restoration.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Services\\AuthService",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "process": {
+            "name": "process",
+            "line": 38,
+            "short_desc": "Attempts to authenticate the user from a remember-me cookie when no session is active.",
+            "long_desc": "On success, reopens the session and rotates the token. On failure, expires the cookie.",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "The handler's response.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 38,
+                    "short_desc": "The incoming HTTP request.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ServerRequestInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "handler": {
+                    "name": "handler",
+                    "line": 38,
+                    "short_desc": "The next middleware or route handler in the pipeline.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Server\\RequestHandlerInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

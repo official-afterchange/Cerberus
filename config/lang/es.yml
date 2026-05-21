@@ -18,6 +18,9 @@ CLIENT_NOT_FOUND: "El cliente especificado no está registrado."
 TITLE_INVALID_REDIRECT_URI: "URI de redirección inválida."
 INVALID_REDIRECT_URI: "La URI de redirección proporcionada no está registrada con el cliente."
 
+TITLE_INVALID_SCOPE: "Scope inválido."
+INVALID_SCOPE: "El scope 'openid' es obligatorio para OpenID Connect."
+
 TITLE_ACCESS_DENIED: "Acceso denegado."
 ACCESS_DENIED: "No has autorizado a esta aplicación para acceder a tu información."
 

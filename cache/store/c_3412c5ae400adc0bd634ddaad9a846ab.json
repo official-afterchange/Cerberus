@@ -1,0 +1,133 @@
+{
+    "name": "Afterchange\\Template\\Repositories\\OAuthClientRepository",
+    "line": 13,
+    "short_desc": "Handles database queries for OAuth 2.0 client applications and their redirect URIs.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Repositories",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Repositories\/OAuthClientRepository.php",
+    "relative_file": null,
+    "hash": "ad8a280fba42eee0962f877555673e12cb69c312",
+    "parent": "Afterchange\\Template\\Repositories\\Repository",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "OAuthClient": "Afterchange\\Template\\Models\\OAuthClient",
+        "PDO": "PDO"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "findByClientId": {
+            "name": "findByClientId",
+            "line": 21,
+            "short_desc": "Finds an OAuth client by its public client identifier.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\OAuthClient",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The hydrated client model, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "clientId": {
+                    "name": "clientId",
+                    "line": 21,
+                    "short_desc": "The public client_id to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "isRedirectUriValid": {
+            "name": "isRedirectUriValid",
+            "line": 44,
+            "short_desc": "Checks whether a given redirect URI is registered for the specified client.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if the URI is registered, false otherwise.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "client": {
+                    "name": "client",
+                    "line": 44,
+                    "short_desc": "The client whose allowed redirect URIs are checked.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\OAuthClient",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "redirectUri": {
+                    "name": "redirectUri",
+                    "line": 44,
+                    "short_desc": "The redirect URI to validate.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

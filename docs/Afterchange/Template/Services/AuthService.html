@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Afterchange\Template\Services\AuthService | Elegance Documentation</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/doctum.css">
+        <link rel="stylesheet" type="text/css" href="../../../fonts/doctum-font.css">
+        <script src="../../../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../../../doctum.js"></script>
+        <script async defer src="../../../js/bootstrap.min.js"></script>
+        <script async defer src="../../../js/autocomplete.min.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    </head>
+
+    <body id="class" data-name="class:Afterchange_Template_Services_AuthService" data-root-path="../../../" data-search-index-url="../../../doctum-search.json">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <div class="search-bar hidden" id="search-progress-bar-container">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" id="search-progress-bar"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+        </div>
+        <form id="search-form" action="../../../search.html">
+            <span class="icon icon-search"></span>
+            <input name="search"
+                   id="doctum-search-auto-complete"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Rechercher"
+                   spellcheck="false"
+                   autocorrect="off"
+                   autocomplete="off"
+                   autocapitalize="off">
+            <div class="auto-complete-results" id="auto-complete-results"></div>
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Afficher le menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Elegance Documentation</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                    <li><a href="../../../namespaces.html">Namespaces</a></li>
+                    <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Sommaire</a></li>
+                    <li><a href="../../../search.html">Rechercher</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">classe</span></li>
+                        <li><a href="../../../Afterchange.html">Afterchange</a></li><li class="backslash">\</li><li><a href="../../../Afterchange/Template.html">Template</a></li><li class="backslash">\</li><li><a href="../../../Afterchange/Template/Services.html">Services</a></li><li class="backslash">\</li><li>AuthService</li>
+            </ol>
+        </div>
+                <div id="page-content">
+    <div class="page-header">
+        <h1>AuthService    
+            </h1>
+    </div>
+
+    
+    <p>final         classe
+    <strong>AuthService</strong>        étends <a href="../../../Afterchange/Template/Services/Service.html"><abbr title="Afterchange\Template\Services\Service">Service</abbr></a>
+</p>
+
+        
+        
+    
+        
+
+            <div class="description">
+            <p><p>Handles user authentication, registration, profile updates, and password reset workflows.</p></p>                    </div>
+            
+        
+    
+            <h2>Propriétés</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_repository">
+                                        protected                                        <a href="../../../Afterchange/Template/Repositories/UserRepository.html"><abbr title="Afterchange\Template\Repositories\UserRepository">UserRepository</abbr></a>
+                                                                                
+                                    </td>
+                <td>$repository</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Méthodes</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8">
+                    <a href="#method___construct">__construct</a>(<a href="../../../Afterchange/Template/Repositories/UserRepository.html"><abbr title="Afterchange\Template\Repositories\UserRepository">UserRepository</abbr></a> $userRepository)
+        
+                                            <p><p>Initializes the service with the user repository.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_currentUser">currentUser</a>()
+        
+                                            <p><p>Returns the currently authenticated user from the session.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_login">login</a>(array $data)
+        
+                                            <p><p>Authenticates a user by username or email and verifies their password.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_register">register</a>(array $data)
+        
+                                            <p><p>Validates registration data and creates a new user account.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_updateUser">updateUser</a>(int $id, array $data)
+        
+                                            <p><p>Updates an existing user's profile data and optionally re-hashes their password.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_createRememberToken">createRememberToken</a>(<a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a> $user)
+        
+                                            <p><p>Generates a new remember-me token, persists it, and returns it.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    void
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_clearRememberToken">clearRememberToken</a>(<a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a> $user)
+        
+                                            <p><p>Clears the remember-me token from the user record.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_loginFromToken">loginFromToken</a>(string $token)
+        
+                                            <p><p>Attempts to authenticate a user from a remember-me token.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_generateResetToken">generateResetToken</a>(string $email)
+        
+                                            <p><p>Generates a password reset token for the given email and persists it with a 1-hour expiry.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_validateResetToken">validateResetToken</a>(string $token)
+        
+                                            <p><p>Validates a password reset token and checks that it has not expired.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_resetPassword">resetPassword</a>(<a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a> $user, string $newPassword)
+        
+                                            <p><p>Hashes and applies a new password for the user, then clears the reset token.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Détails</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">à la ligne 27</div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../../Afterchange/Template/Repositories/UserRepository.html"><abbr title="Afterchange\Template\Repositories\UserRepository">UserRepository</abbr></a> $userRepository)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Initializes the service with the user repository.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Repositories/UserRepository.html"><abbr title="Afterchange\Template\Repositories\UserRepository">UserRepository</abbr></a></td>
+                <td>$userRepository</td>
+                <td><p>The repository used for all user database operations.</p></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_currentUser">
+        <div class="location">à la ligne 37</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null
+    <strong>currentUser</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returns the currently authenticated user from the session.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null</td>
+            <td><p>The hydrated user model, or null if no session is active.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_login">
+        <div class="location">à la ligne 53</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>
+    <strong>login</strong>(array $data)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Authenticates a user by username or email and verifies their password.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td><p>Expects 'username' (or email) and 'password' keys.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a></td>
+            <td><p>The authenticated user model.</p></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Exceptions/AuthException.html"><abbr title="Afterchange\Template\Exceptions\AuthException">AuthException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_register">
+        <div class="location">à la ligne 80</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>
+    <strong>register</strong>(array $data)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Validates registration data and creates a new user account.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td><p>Expects 'username', 'email', and 'password' keys.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a></td>
+            <td><p>The newly created and persisted user model.</p></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Exceptions/AuthException.html"><abbr title="Afterchange\Template\Exceptions\AuthException">AuthException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_updateUser">
+        <div class="location">à la ligne 121</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>
+    <strong>updateUser</strong>(int $id, array $data)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Updates an existing user's profile data and optionally re-hashes their password.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$id</td>
+                <td><p>The ID of the user to update.</p></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td><p>Expects 'username', 'email', and optionally 'password' keys.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a></td>
+            <td><p>The updated and persisted user model.</p></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Exceptions/AuthException.html"><abbr title="Afterchange\Template\Exceptions\AuthException">AuthException</abbr></a></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" rel="noopener" href="https://www.php.net/Exception">Exception</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_createRememberToken">
+        <div class="location">à la ligne 159</div>
+        <code>                    string
+    <strong>createRememberToken</strong>(<a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a> $user)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Generates a new remember-me token, persists it, and returns it.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a></td>
+                <td>$user</td>
+                <td><p>The user to generate the token for.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The generated remember-me token.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_clearRememberToken">
+        <div class="location">à la ligne 174</div>
+        <code>                    void
+    <strong>clearRememberToken</strong>(<a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a> $user)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Clears the remember-me token from the user record.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a></td>
+                <td>$user</td>
+                <td><p>The user whose token should be removed.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_loginFromToken">
+        <div class="location">à la ligne 186</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null
+    <strong>loginFromToken</strong>(string $token)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Attempts to authenticate a user from a remember-me token.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$token</td>
+                <td><p>The remember-me token from the cookie.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null</td>
+            <td><p>The matching user model, or null if the token is invalid.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_generateResetToken">
+        <div class="location">à la ligne 200</div>
+        <code>                    string|null
+    <strong>generateResetToken</strong>(string $email)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Generates a password reset token for the given email and persists it with a 1-hour expiry.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$email</td>
+                <td><p>The email address of the account requesting a reset.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string|null</td>
+            <td><p>The generated reset token, or null if no account matches the email.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validateResetToken">
+        <div class="location">à la ligne 222</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null
+    <strong>validateResetToken</strong>(string $token)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Validates a password reset token and checks that it has not expired.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$token</td>
+                <td><p>The reset token to validate.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a>|null</td>
+            <td><p>The matching user model, or null if the token is invalid or expired.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_resetPassword">
+        <div class="location">à la ligne 245</div>
+        <code>                    bool
+    <strong>resetPassword</strong>(<a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a> $user, string $newPassword)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Hashes and applies a new password for the user, then clears the reset token.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Models/User.html"><abbr title="Afterchange\Template\Models\User">User</abbr></a></td>
+                <td>$user</td>
+                <td><p>The user whose password is being reset.</p></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$newPassword</td>
+                <td><p>The new plain-text password (minimum 8 characters).</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td><p>True on success, false on failure.</p></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Exceptions/AuthException.html"><abbr title="Afterchange\Template\Exceptions\AuthException">AuthException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+</div><div id="footer">
+        Généré par <a href="https://github.com/code-lts/doctum">Doctum, un générateur de documentation d'API, successeur de Sami</a>.</div></div>
+    </div>
+    </body>
+
+</html>

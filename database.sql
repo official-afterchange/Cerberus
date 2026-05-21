@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS cerberus;
-
-CREATE DATABASE cerberus;
-USE cerberus;
-
 CREATE TABLE users (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     username varchar(50) NOT NULL UNIQUE,
@@ -61,17 +56,35 @@ CREATE TABLE oauth_codes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     code VARCHAR(128) UNIQUE NOT NULL,
     client_internal_id INT NOT NULL,
-    user_id INT NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
     expires_at DATETIME NOT NULL,
     scope VARCHAR(255),
     used TINYINT(1) DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (client_internal_id) REFERENCES oauth_clients(id) ON DELETE CASCADE
+    FOREIGN KEY (client_internal_id) REFERENCES oauth_clients(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE oauth_access_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    access_token VARCHAR(128) UNIQUE NOT NULL,
+    client_internal_id INT NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
+    expires_at DATETIME NOT NULL,
+    scope VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (client_internal_id) REFERENCES oauth_clients(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE oauth_scopes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    scope_name VARCHAR(50) UNIQUE NOT NULL,
-    description VARCHAR(255),
-    is_default TINYINT(1) DEFAULT 0
+  id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  scope varchar(50) NOT NULL UNIQUE,
+  name varchar(50) NOT NULL,
+  description varchar(255) DEFAULT NULL,
+  is_default tinyint(1) DEFAULT 0
 );
+
+INSERT INTO oauth_scopes (scope, name, description, is_default) VALUES
+('profil', 'SCOPE_PROFILE_NAME', 'SCOPE_PROFILE_DESC', 1),
+('email', 'SCOPE_EMAIL_NAME', 'SCOPE_EMAIL_DESC', 0);

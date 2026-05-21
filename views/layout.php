@@ -1,3 +1,11 @@
+<?php
+/** @var \Afterchange\Template\Utils\Translator $t */
+/** @var string $title */
+/** @var string $content */
+/** @var array $extra_css */
+/** @var array $extra_js */
+/** @var bool $layout */
+?>
 <!DOCTYPE html>
 <html dir="<?= ($_SESSION['lang'] ?? '') === 'ar' ? 'rtl' : 'ltr' ?>" lang="<?= $_SESSION['lang'] ?? 'en' ?>">
 

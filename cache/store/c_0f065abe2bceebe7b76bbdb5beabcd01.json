@@ -1,0 +1,113 @@
+{
+    "name": "Afterchange\\Template\\Repositories\\OAuthCodeRepository",
+    "line": 12,
+    "short_desc": "Handles database queries for OAuth 2.0 authorization codes.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Repositories",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Repositories\/OAuthCodeRepository.php",
+    "relative_file": null,
+    "hash": "9e153e40f676ae17f4b27bd414e0cd320a2187f9",
+    "parent": "Afterchange\\Template\\Repositories\\Repository",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "PDO": "PDO"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "findByCode": {
+            "name": "findByCode",
+            "line": 20,
+            "short_desc": "Finds an authorization code record by its code string.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\OAuthCode",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The hydrated model, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "code": {
+                    "name": "code",
+                    "line": 20,
+                    "short_desc": "The authorization code to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "revokeCode": {
+            "name": "revokeCode",
+            "line": 41,
+            "short_desc": "Marks an authorization code as used, preventing it from being exchanged again.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True on success, false on failure.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 41,
+                    "short_desc": "The internal ID of the authorization code to revoke.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

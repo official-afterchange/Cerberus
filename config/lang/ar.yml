@@ -18,6 +18,9 @@ CLIENT_NOT_FOUND: "العميل المحدد غير مسجل."
 TITLE_INVALID_REDIRECT_URI: "رابط إعادة توجيه غير صالح."
 INVALID_REDIRECT_URI: "رابط إعادة التوجيه المقدم غير مسجل لدى العميل."
 
+TITLE_INVALID_SCOPE: "نطاق غير صالح."
+INVALID_SCOPE: "نطاق 'openid' مطلوب لبروتوكول OpenID Connect."
+
 TITLE_ACCESS_DENIED: "تم رفض الوصول."
 ACCESS_DENIED: "لم تقم بتفويض هذا التطبيق للوصول إلى معلوماتك."
 

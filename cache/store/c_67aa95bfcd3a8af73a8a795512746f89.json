@@ -1,0 +1,640 @@
+{
+    "name": "Afterchange\\Template\\Services\\OAuthService",
+    "line": 17,
+    "short_desc": "Orchestrates the OAuth 2.0 authorization code flow: client lookup, code generation, token exchange, and validation.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Services",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Services\/OAuthService.php",
+    "relative_file": null,
+    "hash": "6b767de052eb34856e94d746f8e1a32eb75b8310",
+    "parent": "Afterchange\\Template\\Services\\Service",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "OAuthClient": "Afterchange\\Template\\Models\\OAuthClient",
+        "OAuthScope": "Afterchange\\Template\\Models\\OAuthScope",
+        "OAuthAccessTokenRepository": "Afterchange\\Template\\Repositories\\OAuthAccessTokenRepository",
+        "OAuthClientRepository": "Afterchange\\Template\\Repositories\\OAuthClientRepository",
+        "OAuthCodeRepository": "Afterchange\\Template\\Repositories\\OAuthCodeRepository",
+        "OAuthScopeRepository": "Afterchange\\Template\\Repositories\\OAuthScopeRepository"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "oAuthClientRepository": {
+            "name": "oAuthClientRepository",
+            "line": 19,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Repositories\\OAuthClientRepository",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "oAuthScopeRepository": {
+            "name": "oAuthScopeRepository",
+            "line": 20,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Repositories\\OAuthScopeRepository",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "oAuthCodeRepository": {
+            "name": "oAuthCodeRepository",
+            "line": 21,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Repositories\\OAuthCodeRepository",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "oAuthAccessTokenRepository": {
+            "name": "oAuthAccessTokenRepository",
+            "line": 22,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Repositories\\OAuthAccessTokenRepository",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 32,
+            "short_desc": "Initializes the service with all required OAuth repositories.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "oAuthClientRepository": {
+                    "name": "oAuthClientRepository",
+                    "line": 33,
+                    "short_desc": "Handles client and redirect URI lookups.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Repositories\\OAuthClientRepository",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "oAuthScopeRepository": {
+                    "name": "oAuthScopeRepository",
+                    "line": 34,
+                    "short_desc": "Handles scope resolution.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Repositories\\OAuthScopeRepository",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "oAuthCodeRepository": {
+                    "name": "oAuthCodeRepository",
+                    "line": 35,
+                    "short_desc": "Handles authorization code persistence and revocation.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Repositories\\OAuthCodeRepository",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "oAuthAccessTokenRepository": {
+                    "name": "oAuthAccessTokenRepository",
+                    "line": 36,
+                    "short_desc": "Handles access token persistence and lookup.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Repositories\\OAuthAccessTokenRepository",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "getClientById": {
+            "name": "getClientById",
+            "line": 50,
+            "short_desc": "Finds an OAuth client by its public client identifier.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\OAuthClient",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The matching client model, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "clientId": {
+                    "name": "clientId",
+                    "line": 50,
+                    "short_desc": "The public client_id to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "isValidRedirectUri": {
+            "name": "isValidRedirectUri",
+            "line": 62,
+            "short_desc": "Checks whether a redirect URI is registered for the given client.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True if the URI is registered, false otherwise.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "client": {
+                    "name": "client",
+                    "line": 62,
+                    "short_desc": "The client to validate against.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\OAuthClient",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "redirectUri": {
+                    "name": "redirectUri",
+                    "line": 62,
+                    "short_desc": "The redirect URI to check.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "getDefaultScopes": {
+            "name": "getDefaultScopes",
+            "line": 72,
+            "short_desc": "Returns all scopes marked as default.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of hydrated default scope models.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getScopeByNames": {
+            "name": "getScopeByNames",
+            "line": 83,
+            "short_desc": "Resolves scope models from a list of scope name strings.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "An array of matching hydrated scope models.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "scopeNames": {
+                    "name": "scopeNames",
+                    "line": 83,
+                    "short_desc": "The scope identifiers to resolve (e.g., ['openid', 'profile']).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "generateAuthCode": {
+            "name": "generateAuthCode",
+            "line": 96,
+            "short_desc": "Generates a short-lived authorization code (valid 5 minutes) and persists it.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The generated 64-character authorization code.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "client": {
+                    "name": "client",
+                    "line": 96,
+                    "short_desc": "The client the code is issued for.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\OAuthClient",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "userId": {
+                    "name": "userId",
+                    "line": 96,
+                    "short_desc": "The ID of the user who granted consent.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "scopeStr": {
+                    "name": "scopeStr",
+                    "line": 96,
+                    "short_desc": "Space-separated scope string to associate with the code.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "validateAndRevokeAuthCode": {
+            "name": "validateAndRevokeAuthCode",
+            "line": 116,
+            "short_desc": "Validates an authorization code against the client and marks it as used if valid.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\OAuthCode",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The revoked code model, or null if invalid or expired.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "code": {
+                    "name": "code",
+                    "line": 116,
+                    "short_desc": "The authorization code to validate.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "client": {
+                    "name": "client",
+                    "line": 116,
+                    "short_desc": "The client attempting to exchange the code.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\OAuthClient",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "generateAccessToken": {
+            "name": "generateAccessToken",
+            "line": 142,
+            "short_desc": "Generates a Bearer access token (valid 1 hour) and persists it.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The generated 128-character access token.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "client": {
+                    "name": "client",
+                    "line": 142,
+                    "short_desc": "The client the token is issued for.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\OAuthClient",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "userId": {
+                    "name": "userId",
+                    "line": 142,
+                    "short_desc": "The ID of the authenticated user.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "scopeStr": {
+                    "name": "scopeStr",
+                    "line": 142,
+                    "short_desc": "Space-separated scope string to associate with the token.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "''",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "validateAccessToken": {
+            "name": "validateAccessToken",
+            "line": 161,
+            "short_desc": "Validates an access token and checks that it has not expired.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The token and associated user data as an associative array, or null if invalid or expired.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "token": {
+                    "name": "token",
+                    "line": 161,
+                    "short_desc": "The raw Bearer token to validate.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

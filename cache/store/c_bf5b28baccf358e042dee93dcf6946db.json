@@ -1,0 +1,97 @@
+{
+    "name": "Afterchange\\Template\\Utils\\ErrorCodes",
+    "line": 10,
+    "short_desc": "Centralizes machine-readable error code constants used across services and controllers.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Utils",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Utils\/ErrorCodes.php",
+    "relative_file": null,
+    "hash": "b1d483290f4ebbad3a22084458092870cf711c59",
+    "parent": null,
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": {
+        "MISSING_FIELDS": {
+            "name": "MISSING_FIELDS",
+            "line": 12,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "EMAIL_ALREADY_EXISTS": {
+            "name": "EMAIL_ALREADY_EXISTS",
+            "line": 13,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "USERNAME_ALREADY_TAKEN": {
+            "name": "USERNAME_ALREADY_TAKEN",
+            "line": 14,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "REGISTRATION_FAILED": {
+            "name": "REGISTRATION_FAILED",
+            "line": 15,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "INVALID_EMAIL": {
+            "name": "INVALID_EMAIL",
+            "line": 16,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "WEAK_PASSWORD": {
+            "name": "WEAK_PASSWORD",
+            "line": 17,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "LOGIN_FAILED": {
+            "name": "LOGIN_FAILED",
+            "line": 18,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "TOO_MANY_REQUESTS": {
+            "name": "TOO_MANY_REQUESTS",
+            "line": 19,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        },
+        "INTERNAL_ERROR": {
+            "name": "INTERNAL_ERROR",
+            "line": 20,
+            "short_desc": null,
+            "long_desc": null,
+            "modifiers": 1,
+            "tags": []
+        }
+    }
+}

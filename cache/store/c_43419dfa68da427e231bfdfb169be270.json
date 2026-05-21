@@ -1,0 +1,304 @@
+{
+    "name": "Afterchange\\Template\\Controllers\\ForgotPasswordController",
+    "line": 19,
+    "short_desc": "Handles password reset requests and reset link delivery by email.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Controllers",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Controllers\/ForgotPasswordController.php",
+    "relative_file": null,
+    "hash": "1904ea26e57c303fe79a29435f96d172be913750",
+    "parent": "Afterchange\\Template\\Controllers\\Controller",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "AuthService": "Afterchange\\Template\\Services\\AuthService",
+        "Mailer": "Afterchange\\Template\\Utils\\Mailer",
+        "Translator": "Afterchange\\Template\\Utils\\Translator",
+        "Response": "Psr\\Http\\Message\\ResponseInterface",
+        "Request": "Psr\\Http\\Message\\ServerRequestInterface",
+        "LoggerInterface": "Psr\\Log\\LoggerInterface",
+        "PhpRenderer": "Slim\\Views\\PhpRenderer",
+        "Email": "Symfony\\Component\\Mime\\Email"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 35,
+            "short_desc": "Initializes the controller with its required dependencies.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "view": {
+                    "name": "view",
+                    "line": 35,
+                    "short_desc": "The template rendering engine.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Slim\\Views\\PhpRenderer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "authService": {
+                    "name": "authService",
+                    "line": 35,
+                    "short_desc": "Handles token generation and account lookup.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Services\\AuthService",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "logger": {
+                    "name": "logger",
+                    "line": 35,
+                    "short_desc": "PSR-3 logger for audit and debug output.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Log\\LoggerInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "t": {
+                    "name": "t",
+                    "line": 35,
+                    "short_desc": "Translation utility for user-facing messages.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Utils\\Translator",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "m": {
+                    "name": "m",
+                    "line": 35,
+                    "short_desc": "Mail dispatcher for sending the reset email.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Utils\\Mailer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "show": {
+            "name": "show",
+            "line": 52,
+            "short_desc": "Renders the forgot password form.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "The rendered form view.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 52,
+                    "short_desc": "The incoming HTTP request.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ServerRequestInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "response": {
+                    "name": "response",
+                    "line": 52,
+                    "short_desc": "The HTTP response object.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ResponseInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "args": {
+                    "name": "args",
+                    "line": 52,
+                    "short_desc": "Route arguments (unused).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "sendLink": {
+            "name": "sendLink",
+            "line": 65,
+            "short_desc": "Validates the submitted email and sends a password reset link if an account exists.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "A redirect to the login page.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 65,
+                    "short_desc": "The incoming HTTP request carrying the form data.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ServerRequestInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "response": {
+                    "name": "response",
+                    "line": 65,
+                    "short_desc": "The HTTP response object.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ResponseInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "args": {
+                    "name": "args",
+                    "line": 65,
+                    "short_desc": "Route arguments (unused).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

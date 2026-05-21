@@ -1,0 +1,188 @@
+{
+    "name": "Afterchange\\Template\\Middlewares\\RateLimitMiddleware",
+    "line": 18,
+    "short_desc": "Limits repeated requests from the same IP using a file-based attempt counter.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Middlewares",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Middlewares\/RateLimitMiddleware.php",
+    "relative_file": null,
+    "hash": "0bffd9aa4a14ad792b4b20e20e8030f7c3030609",
+    "parent": null,
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "ErrorCodes": "Afterchange\\Template\\Utils\\ErrorCodes",
+        "Translator": "Afterchange\\Template\\Utils\\Translator",
+        "Response": "Psr\\Http\\Message\\ResponseInterface",
+        "Request": "Psr\\Http\\Message\\ServerRequestInterface",
+        "MiddlewareInterface": "Psr\\Http\\Server\\MiddlewareInterface",
+        "Handler": "Psr\\Http\\Server\\RequestHandlerInterface",
+        "SlimResponse": "Slim\\Psr7\\Response"
+    },
+    "errors": [],
+    "interfaces": {
+        "Psr\\Http\\Server\\MiddlewareInterface": "Psr\\Http\\Server\\MiddlewareInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 33,
+            "short_desc": "Initializes the middleware and ensures the rate limit storage directory exists.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "translator": {
+                    "name": "translator",
+                    "line": 33,
+                    "short_desc": "Translation utility for user-facing error messages.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Utils\\Translator",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "storagePath": {
+                    "name": "storagePath",
+                    "line": 33,
+                    "short_desc": "Path to the directory used to store per-IP attempt files.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "__DIR__ . '\/..\/..\/storage\/rate_limit'",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "maxAttempts": {
+                    "name": "maxAttempts",
+                    "line": 33,
+                    "short_desc": "Maximum number of attempts allowed within the decay window (default: 5).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "5",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "decaySeconds": {
+                    "name": "decaySeconds",
+                    "line": 33,
+                    "short_desc": "Duration in seconds before the attempt counter resets (default: 60).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "60",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "process": {
+            "name": "process",
+            "line": 53,
+            "short_desc": "Tracks request attempts per IP, blocks requests that exceed the limit, and clears\nthe counter on successful authentication.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "The handler's response, or a 302 redirect to login if the limit is exceeded.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 53,
+                    "short_desc": "The incoming HTTP request.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ServerRequestInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "handler": {
+                    "name": "handler",
+                    "line": 53,
+                    "short_desc": "The next middleware or route handler in the pipeline.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Server\\RequestHandlerInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

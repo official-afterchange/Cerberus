@@ -1,0 +1,65 @@
+{
+    "name": "Afterchange\\Template\\Models\\OAuthClientRedirect",
+    "line": 10,
+    "short_desc": "Represents a registered redirect URI associated with an OAuth 2.0 client.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Models",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Models\/OAuthClientRedirect.php",
+    "relative_file": null,
+    "hash": "9f859a7895fadc2f7315771330169aa647bdea69",
+    "parent": "Afterchange\\Template\\Models\\Model",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "client_internal_id": {
+            "name": "client_internal_id",
+            "line": 12,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "redirect_uri": {
+            "name": "redirect_uri",
+            "line": 13,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        }
+    },
+    "methods": [],
+    "constants": []
+}

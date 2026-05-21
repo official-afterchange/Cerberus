@@ -1,0 +1,50 @@
+{
+    "name": "Afterchange\\Template\\Exceptions\\CustomErrorHandler",
+    "line": 14,
+    "short_desc": "Extends Slim's error handler to intercept OAuth exceptions and redirect with a proper error response.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Exceptions",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Exceptions\/CustomErrorHandler.php",
+    "relative_file": null,
+    "hash": "8cd89555e2d6797f4df85b5913e026860ffbb858",
+    "parent": "Slim\\Handlers\\ErrorHandler",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "OAuthRedirectBuilder": "Afterchange\\Template\\Utils\\OAuthRedirectBuilder",
+        "ResponseInterface": "Psr\\Http\\Message\\ResponseInterface",
+        "ErrorHandler": "Slim\\Handlers\\ErrorHandler"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "respond": {
+            "name": "respond",
+            "line": 22,
+            "short_desc": "Handles OAuth exceptions by redirecting to the client URI with an error payload,\nfalling back to the default Slim error response for all other exceptions.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "A 302 redirect for OAuth errors, or the default error response.",
+            "tags": [],
+            "see": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

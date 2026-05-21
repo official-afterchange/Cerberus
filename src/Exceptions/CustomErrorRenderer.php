@@ -7,15 +7,31 @@ namespace Afterchange\Template\Exceptions;
 use Slim\Interfaces\ErrorRendererInterface;
 use Throwable;
 
-class CustomErrorRenderer implements ErrorRendererInterface
+/**
+ * Renders application errors as HTML using the PhpRenderer, with normalized HTTP status codes and translation keys.
+ */
+final class CustomErrorRenderer implements ErrorRendererInterface
 {
     private \Slim\Views\PhpRenderer $view;
 
+    /**
+     * Initializes the renderer with the template engine.
+     *
+     * @param \Slim\Views\PhpRenderer $view The template rendering engine.
+     */
     public function __construct(\Slim\Views\PhpRenderer $view)
     {
         $this->view = $view;
     }
 
+    /**
+     * Renders the error view for the given exception, normalizing the HTTP status code
+     * and mapping known exception types to translation keys.
+     *
+     * @param Throwable $exception          The caught exception to render.
+     * @param bool      $displayErrorDetails Whether to expose debug information in the view.
+     * @return string                        The rendered HTML error page as a string.
+     */
     public function __invoke(Throwable $exception, bool $displayErrorDetails): string
     {
         $code = $exception->getCode();
@@ -33,15 +49,16 @@ class CustomErrorRenderer implements ErrorRendererInterface
             $messageKey = 'ACCESS_FORBIDDEN';
         }
 
-        if ($code === 500)
+        if ($code === 500) {
             $messageKey = 'INTERNAL_ERROR';
-
+        }
 
         $data = [
             'code' => $code,
             'title' => 'TITLE_' . $messageKey,
             'message' => $messageKey,
             'debug' => $displayErrorDetails,
+            'exception' => $exception,
             'csrf_token' => $_SESSION['csrf_token'] ?? null,
         ];
 

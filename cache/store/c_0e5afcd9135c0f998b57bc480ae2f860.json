@@ -1,0 +1,306 @@
+{
+    "name": "Afterchange\\Template\\Controllers\\ProfileController",
+    "line": 18,
+    "short_desc": "Handles display and update of the authenticated user's profile.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Controllers",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Controllers\/ProfileController.php",
+    "relative_file": null,
+    "hash": "4bed147e74b697667283ac459b4aa25026cb3fb6",
+    "parent": "Afterchange\\Template\\Controllers\\Controller",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "AuthException": "Afterchange\\Template\\Exceptions\\AuthException",
+        "AuthService": "Afterchange\\Template\\Services\\AuthService",
+        "ErrorCodes": "Afterchange\\Template\\Utils\\ErrorCodes",
+        "Translator": "Afterchange\\Template\\Utils\\Translator",
+        "Response": "Psr\\Http\\Message\\ResponseInterface",
+        "Request": "Psr\\Http\\Message\\ServerRequestInterface",
+        "PhpRenderer": "Slim\\Views\\PhpRenderer"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "authService": {
+            "name": "authService",
+            "line": 20,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Services\\AuthService",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "translator": {
+            "name": "translator",
+            "line": 21,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Utils\\Translator",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 30,
+            "short_desc": "Initializes the controller with its required dependencies.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "view": {
+                    "name": "view",
+                    "line": 30,
+                    "short_desc": "The template rendering engine.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Slim\\Views\\PhpRenderer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "authService": {
+                    "name": "authService",
+                    "line": 30,
+                    "short_desc": "Handles user retrieval and profile updates.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Services\\AuthService",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "translator": {
+                    "name": "translator",
+                    "line": 30,
+                    "short_desc": "Translation utility for user-facing error messages.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Utils\\Translator",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "show": {
+            "name": "show",
+            "line": 45,
+            "short_desc": "Renders the profile page for the currently authenticated user.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "The rendered profile view.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 45,
+                    "short_desc": "The incoming HTTP request (unused).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ServerRequestInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "response": {
+                    "name": "response",
+                    "line": 45,
+                    "short_desc": "The HTTP response object.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ResponseInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "args": {
+                    "name": "args",
+                    "line": 45,
+                    "short_desc": "Route arguments (unused).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "update": {
+            "name": "update",
+            "line": 62,
+            "short_desc": "Processes the profile update form and persists changes for the authenticated user.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "A redirect to the profile page with a success or error flash message.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 62,
+                    "short_desc": "The incoming HTTP request carrying the updated profile data.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ServerRequestInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "response": {
+                    "name": "response",
+                    "line": 62,
+                    "short_desc": "The HTTP response object.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ResponseInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "args": {
+                    "name": "args",
+                    "line": 62,
+                    "short_desc": "Route arguments (unused).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -7,15 +7,29 @@ namespace Afterchange\Template\Repositories;
 use Afterchange\Template\Models\Model;
 use PDO;
 
+/**
+ * Base repository providing generic CRUD operations with reflection-based table and model resolution.
+ */
 abstract class Repository
 {
     protected PDO $pdo;
 
+    /**
+     * Initializes the repository with a database connection.
+     *
+     * @param PDO $pdo The active PDO database connection.
+     */
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
 
+    /**
+     * Resolves the fully qualified model class name from the concrete repository class name.
+     *
+     * @return string The fully qualified model class name.
+     * @throws \Exception If no matching model class is found.
+     */
     protected function getModelClass(): string
     {
         $repoClass = new \ReflectionClass($this);
@@ -31,19 +45,28 @@ abstract class Repository
         return $modelClass;
     }
 
+    /**
+     * Derives the database table name from the model class name using snake_case conversion.
+     *
+     * @return string The pluralized snake_case table name (e.g., 'oauth_clients').
+     */
     protected function getTable(): string
     {
         $modelClass = $this->getModelClass();
         $parts = \explode('\\', $modelClass);
         $shortName = \end($parts);
 
-        // Expression régulière : on cherche une minuscule ([a-z]) suivie d'une majuscule ([A-Z])
-        // On remplace par "minuscule_majuscule"
         $snakeCase = \strtolower(\preg_replace('/([a-z])([A-Z])/', '$1_$2', $shortName));
 
         return $snakeCase . 's';
     }
 
+    /**
+     * Finds a single model by its primary key.
+     *
+     * @param int $id The record ID to look up.
+     * @return Model|null The hydrated model, or null if not found.
+     */
     final public function find(int $id): ?Model
     {
         $stmt = $this->pdo->prepare("SELECT * FROM {$this->getTable()} WHERE id = :id");
@@ -61,6 +84,11 @@ abstract class Repository
         return $model;
     }
 
+    /**
+     * Returns all records from the table as hydrated model instances.
+     *
+     * @return Model[] An array of hydrated model instances.
+     */
     final public function findAll(): array
     {
         $stmt = $this->pdo->query("SELECT * FROM {$this->getTable()}");
@@ -78,6 +106,12 @@ abstract class Repository
         return $models;
     }
 
+    /**
+     * Persists a model by inserting it if new, or updating it if it already has an ID.
+     *
+     * @param Model $model The model instance to persist.
+     * @return bool        True on success, false on failure.
+     */
     final public function save(Model $model): bool
     {
         if (!empty($model->id)) {
@@ -87,6 +121,12 @@ abstract class Repository
         return $this->insert($model);
     }
 
+    /**
+     * Converts DateTime instances in a data array to formatted date strings for database storage.
+     *
+     * @param array $data The raw key-value data to format.
+     * @return array      The formatted data array with DateTime values replaced by strings.
+     */
     private function formatData(array $data): array
     {
         foreach ($data as $key => $value) {
@@ -97,6 +137,12 @@ abstract class Repository
         return $data;
     }
 
+    /**
+     * Inserts a new model record into the database and assigns the generated ID back to the model.
+     *
+     * @param Model $model The model instance to insert.
+     * @return bool        True on success, false on failure.
+     */
     private function insert(Model $model): bool
     {
         $fillable = $model->getFillable();
@@ -120,6 +166,13 @@ abstract class Repository
         return $res;
     }
 
+    /**
+     * Updates an existing model record in the database.
+     *
+     * @param Model $model The model instance to update (must have a valid ID).
+     * @return bool        True on success, false on failure.
+     * @throws \Exception  If the model has no ID set.
+     */
     private function update(Model $model): bool
     {
         $fillable = $model->getFillable();
@@ -133,7 +186,7 @@ abstract class Repository
         unset($data['id']);
 
         $formattedData = $this->formatData($data);
-        $set = \implode(', ', \array_map(fn(string $col) => "$col = :$col", \array_keys($formattedData)));
+        $set = \implode(', ', \array_map(fn (string $col) => "$col = :$col", \array_keys($formattedData)));
 
         $stmt = $this->pdo->prepare("UPDATE {$this->getTable()} SET $set WHERE id = :id");
         $formattedData['id'] = $id;
@@ -141,6 +194,13 @@ abstract class Repository
         return $stmt->execute($formattedData);
     }
 
+    /**
+     * Deletes a model record from the database by its primary key.
+     *
+     * @param Model $model The model instance to delete (must have a valid ID).
+     * @return bool        True on success, false on failure.
+     * @throws \Exception  If the model has no ID set.
+     */
     final public function delete(Model $model): bool
     {
         if (empty($model->id)) {

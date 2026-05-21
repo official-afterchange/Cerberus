@@ -1,0 +1,98 @@
+{
+    "name": "Afterchange\\Template\\Middlewares\\CsrfMiddleware",
+    "line": 16,
+    "short_desc": "Guards state-mutating requests against CSRF attacks by validating a session-bound token.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Middlewares",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Middlewares\/CsrfMiddleware.php",
+    "relative_file": null,
+    "hash": "ba7f5a6cd8da5c0bce3371b7e563ca4141acbca9",
+    "parent": null,
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "Response": "Psr\\Http\\Message\\ResponseInterface",
+        "Request": "Psr\\Http\\Message\\ServerRequestInterface",
+        "MiddlewareInterface": "Psr\\Http\\Server\\MiddlewareInterface",
+        "Handler": "Psr\\Http\\Server\\RequestHandlerInterface",
+        "HttpForbiddenException": "Slim\\Exception\\HttpForbiddenException"
+    },
+    "errors": [],
+    "interfaces": {
+        "Psr\\Http\\Server\\MiddlewareInterface": "Psr\\Http\\Server\\MiddlewareInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "process": {
+            "name": "process",
+            "line": 27,
+            "short_desc": "Ensures a CSRF token exists in the session, then validates it on state-mutating requests.",
+            "long_desc": "The token is accepted from either the request body or the X-CSRF-TOKEN header.",
+            "hint": [
+                [
+                    "\\Psr\\Http\\Message\\ResponseInterface",
+                    false
+                ]
+            ],
+            "hint_desc": "The handler's response if the token is valid.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [
+                [
+                    "\\Slim\\Exception\\HttpForbiddenException",
+                    "If the token is missing or does not match the session value."
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 27,
+                    "short_desc": "The incoming HTTP request.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Message\\ServerRequestInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "handler": {
+                    "name": "handler",
+                    "line": 27,
+                    "short_desc": "The next middleware or route handler in the pipeline.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Psr\\Http\\Server\\RequestHandlerInterface",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

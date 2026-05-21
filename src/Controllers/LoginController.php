@@ -1,20 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Afterchange\Template\Controllers;
 
 use Afterchange\Template\Exceptions\AuthException;
 use Afterchange\Template\Services\AuthService;
 use Afterchange\Template\Utils\ErrorCodes;
 use Afterchange\Template\Utils\Translator;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\PhpRenderer;
 
-class LoginController extends Controller
+/**
+ * Handles user authentication: login, logout, and remember-me cookie management.
+ */
+final class LoginController extends Controller
 {
     protected AuthService $authService;
     protected Translator $translator;
 
+    /**
+     * Initializes the controller with its required dependencies.
+     *
+     * @param PhpRenderer $view        The template rendering engine.
+     * @param AuthService $authService Handles authentication logic and token management.
+     * @param Translator  $translator  Translation utility for user-facing error messages.
+     */
     public function __construct(PhpRenderer $view, AuthService $authService, Translator $translator)
     {
         parent::__construct($view);
@@ -22,14 +34,30 @@ class LoginController extends Controller
         $this->translator = $translator;
     }
 
-    public function show(Request $request, Response $response, array $args)
+    /**
+     * Renders the login form.
+     *
+     * @param Request  $request  The incoming HTTP request (reads the 'registered' query param).
+     * @param Response $response The HTTP response object.
+     * @param array    $args     Route arguments (unused).
+     * @return Response          The rendered login view.
+     */
+    public function show(Request $request, Response $response, array $args): Response
     {
         return $this->render($response, 'auth/login.phtml', [
             'registered' => $request->getQueryParams()['registered'] ?? null
         ]);
     }
 
-    public function login(Request $request, Response $response, array $args)
+    /**
+     * Processes login credentials, opens the user session, and handles remember-me persistence.
+     *
+     * @param Request  $request  The incoming HTTP request carrying the form data.
+     * @param Response $response The HTTP response object.
+     * @param array    $args     Route arguments (unused).
+     * @return Response          A redirect to the target page on success, or back to login on failure.
+     */
+    public function login(Request $request, Response $response, array $args): Response
     {
         $data = $request->getParsedBody();
 
@@ -43,15 +71,13 @@ class LoginController extends Controller
 
             $_SESSION['user_id'] = $user->id;
             $_SESSION['username'] = $user->username;
-            
-            error_log("Login OK for user: " . $user->username);
 
             if (!empty($data['remember_me'])) {
                 $token = $this->authService->createRememberToken($user);
                 $this->setRememberCookie($token);
             }
 
-            $redirectUri = $data['redirect'] ?? '/profile';
+            $redirectUri = $data['redirect'] === '' ? '/profile' : $data['redirect'];
 
             return $response->withHeader('Location', $redirectUri)->withStatus(302);
         } catch (AuthException $e) {
@@ -63,7 +89,15 @@ class LoginController extends Controller
         }
     }
 
-    public function logout(Request $request, Response $response, array $args)
+    /**
+     * Destroys the user session, clears the remember-me token, and expires the cookie.
+     *
+     * @param Request  $request  The incoming HTTP request (unused).
+     * @param Response $response The HTTP response object.
+     * @param array    $args     Route arguments (unused).
+     * @return Response          A redirect to the login page.
+     */
+    public function logout(Request $request, Response $response, array $args): Response
     {
         if (!empty($_SESSION['user_id'])) {
             $user = clone $this->authService->currentUser();
@@ -72,10 +106,11 @@ class LoginController extends Controller
             }
         }
 
-        session_destroy();
-        
-        setcookie('remember_me', '', [
-            'expires' => time() - 3600,
+        $_SESSION = [];
+        \session_destroy();
+
+        @\setcookie('remember_me', '', [
+            'expires' => \time() - 3600,
             'path' => '/',
             'secure' => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on',
             'httponly' => true,
@@ -85,10 +120,16 @@ class LoginController extends Controller
         return $response->withHeader('Location', '/login')->withStatus(302);
     }
 
+    /**
+     * Sets a secure remember-me cookie valid for 30 days.
+     *
+     * @param string $token The opaque token to persist in the cookie.
+     * @return void
+     */
     private function setRememberCookie(string $token): void
     {
-        setcookie('remember_me', $token, [
-            'expires' => time() + (30 * 24 * 60 * 60), // 30 days
+        \setcookie('remember_me', $token, [
+            'expires' => \time() + (30 * 24 * 60 * 60), // 30 days
             'path' => '/',
             'secure' => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on',
             'httponly' => true,

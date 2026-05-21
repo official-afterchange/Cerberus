@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Afterchange\Template\Models;
 
-class User extends Model
+/**
+ * Represents an application user with authentication and password reset state.
+ */
+final class User extends Model
 {
     public string $username;
     public string $email;

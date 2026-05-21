@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Afterchange\Template\Utils\Env;
 use Dotenv\Dotenv;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -11,22 +12,22 @@ $dotenv->load();
 
 return [
     'app' => [
-        'env' => $_ENV['APP_ENV'] ?? 'production',
-        'debug' => \filter_var($_ENV['APP_DEBUG'] ?? false, \FILTER_VALIDATE_BOOLEAN),
-        'url' => $_ENV['APP_URL'] ?? 'http://localhost',
-        'lang' => $_ENV['APP_LANG'] ?? 'en',
+        'env' => Env::get('APP_ENV', 'production'),
+        'debug' => Env::get('APP_DEBUG', false),
+        'url' => Env::get('APP_URL', 'http://localhost'),
+        'lang' => Env::get('APP_LANG', 'en'),
     ],
     'db' => [
-        'host' => $_ENV['DB_HOST'] ?? '127.0.0.1',
-        'port' => $_ENV['DB_PORT'] ?? 3306,
-        'name' => $_ENV['DB_NAME'] ?? '',
-        'user' => $_ENV['DB_USER'] ?? '',
-        'pass' => $_ENV['DB_PASS'] ?? '',
+        'host' => Env::get('DB_HOST', '127.0.0.1'),
+        'port' => Env::get('DB_PORT', 3306),
+        'name' => Env::get('DB_NAME', ''),
+        'user' => Env::get('DB_USER', ''),
+        'pass' => Env::get('DB_PASS', ''),
     ],
     'log' => [
-        'path' => $_ENV['LOG_PATH'] ?? __DIR__ . '/../storage/logs/app.log',
+        'path' => Env::get('LOG_PATH', __DIR__ . '/../storage/logs/app.log'),
     ],
     'email' => [
-        'dsn' => $_ENV['EMAIL_DSN'] ?? 'smtp://localhost:1025'
+        'dsn' => Env::get('EMAIL_DSN', 'smtp://localhost:1025')
     ]
 ];

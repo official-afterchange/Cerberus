@@ -1,0 +1,242 @@
+{
+    "name": "Afterchange\\Template\\Exceptions\\OAuthException",
+    "line": 13,
+    "short_desc": "Thrown when an OAuth 2.0 flow fails, carrying the error code, redirect URI, and state for a compliant error redirect.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Exceptions",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Exceptions\/OAuthException.php",
+    "relative_file": null,
+    "hash": "68f68f302ce64932e175beb3ea473dd4823b7e3c",
+    "parent": "Exception",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "Exception": "Exception",
+        "Throwable": "Throwable"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 29,
+            "short_desc": "Creates the exception with all fields required to build a compliant OAuth error redirect.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "oauthError": {
+                    "name": "oauthError",
+                    "line": 30,
+                    "short_desc": "The OAuth 2.0 error code (e.g., 'invalid_scope', 'access_denied').",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "messageKey": {
+                    "name": "messageKey",
+                    "line": 31,
+                    "short_desc": "A translation key used as the exception message for internal logging.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "redirectUri": {
+                    "name": "redirectUri",
+                    "line": 32,
+                    "short_desc": "The client redirect URI to send the error response to, if available.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "state": {
+                    "name": "state",
+                    "line": 33,
+                    "short_desc": "The state parameter from the original request, echoed back to the client.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "httpCode": {
+                    "name": "httpCode",
+                    "line": 34,
+                    "short_desc": "The HTTP status code associated with this error (default: 400).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "400",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "previous": {
+                    "name": "previous",
+                    "line": 35,
+                    "short_desc": "Optional previous exception for chaining.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Throwable",
+                            false
+                        ],
+                        [
+                            "null",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": "null",
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "getOAuthError": {
+            "name": "getOAuthError",
+            "line": 48,
+            "short_desc": "Returns the OAuth 2.0 error code to include in the redirect response.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The error code (e.g., 'invalid_scope', 'unsupported_response_type').",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getRedirectUri": {
+            "name": "getRedirectUri",
+            "line": 58,
+            "short_desc": "Returns the client redirect URI to send the error response to.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The redirect URI, or null if unavailable.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "getState": {
+            "name": "getState",
+            "line": 68,
+            "short_desc": "Returns the state parameter from the original OAuth request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The state value, or null if not provided.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

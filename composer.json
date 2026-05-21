@@ -17,7 +17,9 @@
         "cs:check": "php-cs-fixer check",
         "test": "phpunit --testdox",
         "uml": "php uml/generate-uml.php && java -jar uml/plantuml.jar uml/diagram.puml",
-        "puml": "php uml/generate-uml.php"
+        "puml": "php uml/generate-uml.php",
+        "db:reset": "php reset_db.php",
+        "docs": "vendor/bin/doctum.php update doctum.php"
     },
     "minimum-stability": "stable",
     "require": {
@@ -32,6 +34,8 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.94",
-        "phpunit/phpunit": "^10"
+        "phpunit/phpunit": "^10",
+        "phpstan/phpstan": "^2.1",
+        "code-lts/doctum": "^5.6"
     }
 }

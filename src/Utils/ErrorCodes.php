@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace Afterchange\Template\Utils;
 
-class ErrorCodes
+/**
+ * Centralizes machine-readable error code constants used across services and controllers.
+ */
+final class ErrorCodes
 {
     public const MISSING_FIELDS = 'MISSING_FIELDS';
     public const EMAIL_ALREADY_EXISTS = 'EMAIL_ALREADY_EXISTS';

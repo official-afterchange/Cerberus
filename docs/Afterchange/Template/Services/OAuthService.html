@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Afterchange\Template\Services\OAuthService | Elegance Documentation</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/doctum.css">
+        <link rel="stylesheet" type="text/css" href="../../../fonts/doctum-font.css">
+        <script src="../../../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../../../doctum.js"></script>
+        <script async defer src="../../../js/bootstrap.min.js"></script>
+        <script async defer src="../../../js/autocomplete.min.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    </head>
+
+    <body id="class" data-name="class:Afterchange_Template_Services_OAuthService" data-root-path="../../../" data-search-index-url="../../../doctum-search.json">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <div class="search-bar hidden" id="search-progress-bar-container">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" id="search-progress-bar"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+        </div>
+        <form id="search-form" action="../../../search.html">
+            <span class="icon icon-search"></span>
+            <input name="search"
+                   id="doctum-search-auto-complete"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Rechercher"
+                   spellcheck="false"
+                   autocorrect="off"
+                   autocomplete="off"
+                   autocapitalize="off">
+            <div class="auto-complete-results" id="auto-complete-results"></div>
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Afficher le menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Elegance Documentation</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                    <li><a href="../../../namespaces.html">Namespaces</a></li>
+                    <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Sommaire</a></li>
+                    <li><a href="../../../search.html">Rechercher</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">classe</span></li>
+                        <li><a href="../../../Afterchange.html">Afterchange</a></li><li class="backslash">\</li><li><a href="../../../Afterchange/Template.html">Template</a></li><li class="backslash">\</li><li><a href="../../../Afterchange/Template/Services.html">Services</a></li><li class="backslash">\</li><li>OAuthService</li>
+            </ol>
+        </div>
+                <div id="page-content">
+    <div class="page-header">
+        <h1>OAuthService    
+            </h1>
+    </div>
+
+    
+    <p>final         classe
+    <strong>OAuthService</strong>        étends <a href="../../../Afterchange/Template/Services/Service.html"><abbr title="Afterchange\Template\Services\Service">Service</abbr></a>
+</p>
+
+        
+        
+    
+        
+
+            <div class="description">
+            <p><p>Orchestrates the OAuth 2.0 authorization code flow: client lookup, code generation, token exchange, and validation.</p></p>                    </div>
+            
+        
+    
+            <h2>Propriétés</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_repository">
+                                        protected                                        <a href="../../../Afterchange/Template/Repositories/Repository.html"><abbr title="Afterchange\Template\Repositories\Repository">Repository</abbr></a>
+                                                                                
+                                    </td>
+                <td>$repository</td>
+                <td class="last"></td>
+                <td><small>depuis&nbsp;<a href="../../../Afterchange/Template/Services/Service.html#property_repository">
+<abbr title="Afterchange\Template\Services\Service">Service</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_oAuthClientRepository">
+                                        protected                                        <a href="../../../Afterchange/Template/Repositories/OAuthClientRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthClientRepository">OAuthClientRepository</abbr></a>
+                                                                                
+                                    </td>
+                <td>$oAuthClientRepository</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_oAuthScopeRepository">
+                                        protected                                        <a href="../../../Afterchange/Template/Repositories/OAuthScopeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthScopeRepository">OAuthScopeRepository</abbr></a>
+                                                                                
+                                    </td>
+                <td>$oAuthScopeRepository</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_oAuthCodeRepository">
+                                        protected                                        <a href="../../../Afterchange/Template/Repositories/OAuthCodeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthCodeRepository">OAuthCodeRepository</abbr></a>
+                                                                                
+                                    </td>
+                <td>$oAuthCodeRepository</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_oAuthAccessTokenRepository">
+                                        protected                                        <a href="../../../Afterchange/Template/Repositories/OAuthAccessTokenRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthAccessTokenRepository">OAuthAccessTokenRepository</abbr></a>
+                                                                                
+                                    </td>
+                <td>$oAuthAccessTokenRepository</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Méthodes</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8">
+                    <a href="#method___construct">__construct</a>(<a href="../../../Afterchange/Template/Repositories/OAuthClientRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthClientRepository">OAuthClientRepository</abbr></a> $oAuthClientRepository, <a href="../../../Afterchange/Template/Repositories/OAuthScopeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthScopeRepository">OAuthScopeRepository</abbr></a> $oAuthScopeRepository, <a href="../../../Afterchange/Template/Repositories/OAuthCodeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthCodeRepository">OAuthCodeRepository</abbr></a> $oAuthCodeRepository, <a href="../../../Afterchange/Template/Repositories/OAuthAccessTokenRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthAccessTokenRepository">OAuthAccessTokenRepository</abbr></a> $oAuthAccessTokenRepository)
+        
+                                            <p><p>Initializes the service with all required OAuth repositories.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a>|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getClientById">getClientById</a>(string $clientId)
+        
+                                            <p><p>Finds an OAuth client by its public client identifier.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_isValidRedirectUri">isValidRedirectUri</a>(<a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client, string $redirectUri)
+        
+                                            <p><p>Checks whether a redirect URI is registered for the given client.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getDefaultScopes">getDefaultScopes</a>()
+        
+                                            <p><p>Returns all scopes marked as default.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getScopeByNames">getScopeByNames</a>(array $scopeNames)
+        
+                                            <p><p>Resolves scope models from a list of scope name strings.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_generateAuthCode">generateAuthCode</a>(<a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client, int $userId, string $scopeStr = &#039;&#039;)
+        
+                                            <p><p>Generates a short-lived authorization code (valid 5 minutes) and persists it.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Afterchange/Template/Models/OAuthCode.html"><abbr title="Afterchange\Template\Models\OAuthCode">OAuthCode</abbr></a>|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_validateAndRevokeAuthCode">validateAndRevokeAuthCode</a>(string $code, <a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client)
+        
+                                            <p><p>Validates an authorization code against the client and marks it as used if valid.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_generateAccessToken">generateAccessToken</a>(<a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client, int $userId, string $scopeStr = &#039;&#039;)
+        
+                                            <p><p>Generates a Bearer access token (valid 1 hour) and persists it.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array|null
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_validateAccessToken">validateAccessToken</a>(string $token)
+        
+                                            <p><p>Validates an access token and checks that it has not expired.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Détails</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">à la ligne 32</div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../../Afterchange/Template/Repositories/OAuthClientRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthClientRepository">OAuthClientRepository</abbr></a> $oAuthClientRepository, <a href="../../../Afterchange/Template/Repositories/OAuthScopeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthScopeRepository">OAuthScopeRepository</abbr></a> $oAuthScopeRepository, <a href="../../../Afterchange/Template/Repositories/OAuthCodeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthCodeRepository">OAuthCodeRepository</abbr></a> $oAuthCodeRepository, <a href="../../../Afterchange/Template/Repositories/OAuthAccessTokenRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthAccessTokenRepository">OAuthAccessTokenRepository</abbr></a> $oAuthAccessTokenRepository)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Initializes the service with all required OAuth repositories.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Repositories/OAuthClientRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthClientRepository">OAuthClientRepository</abbr></a></td>
+                <td>$oAuthClientRepository</td>
+                <td><p>Handles client and redirect URI lookups.</p></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Repositories/OAuthScopeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthScopeRepository">OAuthScopeRepository</abbr></a></td>
+                <td>$oAuthScopeRepository</td>
+                <td><p>Handles scope resolution.</p></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Repositories/OAuthCodeRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthCodeRepository">OAuthCodeRepository</abbr></a></td>
+                <td>$oAuthCodeRepository</td>
+                <td><p>Handles authorization code persistence and revocation.</p></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Repositories/OAuthAccessTokenRepository.html"><abbr title="Afterchange\Template\Repositories\OAuthAccessTokenRepository">OAuthAccessTokenRepository</abbr></a></td>
+                <td>$oAuthAccessTokenRepository</td>
+                <td><p>Handles access token persistence and lookup.</p></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getClientById">
+        <div class="location">à la ligne 50</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a>|null
+    <strong>getClientById</strong>(string $clientId)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Finds an OAuth client by its public client identifier.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$clientId</td>
+                <td><p>The public client_id to look up.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a>|null</td>
+            <td><p>The matching client model, or null if not found.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isValidRedirectUri">
+        <div class="location">à la ligne 62</div>
+        <code>                    bool
+    <strong>isValidRedirectUri</strong>(<a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client, string $redirectUri)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Checks whether a redirect URI is registered for the given client.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a></td>
+                <td>$client</td>
+                <td><p>The client to validate against.</p></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$redirectUri</td>
+                <td><p>The redirect URI to check.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td><p>True if the URI is registered, false otherwise.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDefaultScopes">
+        <div class="location">à la ligne 72</div>
+        <code>                    array
+    <strong>getDefaultScopes</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returns all scopes marked as default.</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td><p>An array of hydrated default scope models.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getScopeByNames">
+        <div class="location">à la ligne 83</div>
+        <code>                    array
+    <strong>getScopeByNames</strong>(array $scopeNames)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Resolves scope models from a list of scope name strings.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$scopeNames</td>
+                <td><p>The scope identifiers to resolve (e.g., ['openid', 'profile']).</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td><p>An array of matching hydrated scope models.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_generateAuthCode">
+        <div class="location">à la ligne 96</div>
+        <code>                    string
+    <strong>generateAuthCode</strong>(<a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client, int $userId, string $scopeStr = &#039;&#039;)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Generates a short-lived authorization code (valid 5 minutes) and persists it.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a></td>
+                <td>$client</td>
+                <td><p>The client the code is issued for.</p></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$userId</td>
+                <td><p>The ID of the user who granted consent.</p></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$scopeStr</td>
+                <td><p>Space-separated scope string to associate with the code.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The generated 64-character authorization code.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validateAndRevokeAuthCode">
+        <div class="location">à la ligne 116</div>
+        <code>                    <a href="../../../Afterchange/Template/Models/OAuthCode.html"><abbr title="Afterchange\Template\Models\OAuthCode">OAuthCode</abbr></a>|null
+    <strong>validateAndRevokeAuthCode</strong>(string $code, <a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Validates an authorization code against the client and marks it as used if valid.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$code</td>
+                <td><p>The authorization code to validate.</p></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a></td>
+                <td>$client</td>
+                <td><p>The client attempting to exchange the code.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Afterchange/Template/Models/OAuthCode.html"><abbr title="Afterchange\Template\Models\OAuthCode">OAuthCode</abbr></a>|null</td>
+            <td><p>The revoked code model, or null if invalid or expired.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_generateAccessToken">
+        <div class="location">à la ligne 142</div>
+        <code>                    string
+    <strong>generateAccessToken</strong>(<a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a> $client, int $userId, string $scopeStr = &#039;&#039;)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Generates a Bearer access token (valid 1 hour) and persists it.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Afterchange/Template/Models/OAuthClient.html"><abbr title="Afterchange\Template\Models\OAuthClient">OAuthClient</abbr></a></td>
+                <td>$client</td>
+                <td><p>The client the token is issued for.</p></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$userId</td>
+                <td><p>The ID of the authenticated user.</p></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$scopeStr</td>
+                <td><p>Space-separated scope string to associate with the token.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The generated 128-character access token.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validateAccessToken">
+        <div class="location">à la ligne 161</div>
+        <code>                    array|null
+    <strong>validateAccessToken</strong>(string $token)
+        </code>
+    </h3>
+    <div class="details">    
+            
+    
+            
+
+        <div class="method-description">
+                            <p><p>Validates an access token and checks that it has not expired.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Paramètres</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$token</td>
+                <td><p>The raw Bearer token to validate.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Valeur de retour</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array|null</td>
+            <td><p>The token and associated user data as an associative array, or null if invalid or expired.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+</div><div id="footer">
+        Généré par <a href="https://github.com/code-lts/doctum">Doctum, un générateur de documentation d'API, successeur de Sami</a>.</div></div>
+    </div>
+    </body>
+
+</html>

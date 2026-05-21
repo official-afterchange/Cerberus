@@ -1,0 +1,72 @@
+{
+    "name": "Afterchange\\Template\\Repositories\\OAuthAccessTokenRepository",
+    "line": 12,
+    "short_desc": "Handles database queries for OAuth 2.0 access tokens.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Repositories",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Repositories\/OAuthAccessTokenRepository.php",
+    "relative_file": null,
+    "hash": "04c38e578b0251dc4d94e66d4a980119e208795a",
+    "parent": "Afterchange\\Template\\Repositories\\Repository",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "PDO": "PDO"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "findByToken": {
+            "name": "findByToken",
+            "line": 20,
+            "short_desc": "Finds an access token record joined with the associated user's profile data.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The token and user data as an associative array, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "token": {
+                    "name": "token",
+                    "line": 20,
+                    "short_desc": "The raw access token string to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

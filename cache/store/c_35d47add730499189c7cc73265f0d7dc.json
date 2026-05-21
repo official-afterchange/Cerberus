@@ -1,0 +1,299 @@
+{
+    "name": "Afterchange\\Template\\Models\\User",
+    "line": 10,
+    "short_desc": "Represents an application user with authentication and password reset state.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Models",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Models\/User.php",
+    "relative_file": null,
+    "hash": "68936d90634efbdc04ed2681b3b6a6331c989423",
+    "parent": "Afterchange\\Template\\Models\\Model",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "username": {
+            "name": "username",
+            "line": 12,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "email": {
+            "name": "email",
+            "line": 13,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "password": {
+            "name": "password",
+            "line": 14,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "remember_token": {
+            "name": "remember_token",
+            "line": 15,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "attributes": {
+                    "startLine": 15,
+                    "startTokenPos": 59,
+                    "startFilePos": 315,
+                    "endLine": 15,
+                    "endTokenPos": 59,
+                    "endFilePos": 318
+                },
+                "name": {
+                    "nodeType": "Name",
+                    "attributes": {
+                        "startLine": 15,
+                        "startTokenPos": 59,
+                        "startFilePos": 315,
+                        "endLine": 15,
+                        "endTokenPos": 59,
+                        "endFilePos": 318,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "attributes": {
+                                "startLine": 15,
+                                "startTokenPos": 59,
+                                "startFilePos": 315,
+                                "endLine": 15,
+                                "endTokenPos": 59,
+                                "endFilePos": 318
+                            },
+                            "name": "Afterchange\\Template\\Models\\null"
+                        }
+                    },
+                    "name": "null"
+                }
+            },
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "reset_token": {
+            "name": "reset_token",
+            "line": 16,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "attributes": {
+                    "startLine": 16,
+                    "startTokenPos": 71,
+                    "startFilePos": 355,
+                    "endLine": 16,
+                    "endTokenPos": 71,
+                    "endFilePos": 358
+                },
+                "name": {
+                    "nodeType": "Name",
+                    "attributes": {
+                        "startLine": 16,
+                        "startTokenPos": 71,
+                        "startFilePos": 355,
+                        "endLine": 16,
+                        "endTokenPos": 71,
+                        "endFilePos": 358,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "attributes": {
+                                "startLine": 16,
+                                "startTokenPos": 71,
+                                "startFilePos": 355,
+                                "endLine": 16,
+                                "endTokenPos": 71,
+                                "endFilePos": 358
+                            },
+                            "name": "Afterchange\\Template\\Models\\null"
+                        }
+                    },
+                    "name": "null"
+                }
+            },
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "reset_expires_at": {
+            "name": "reset_expires_at",
+            "line": 17,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": {
+                "nodeType": "Expr_ConstFetch",
+                "attributes": {
+                    "startLine": 17,
+                    "startTokenPos": 83,
+                    "startFilePos": 400,
+                    "endLine": 17,
+                    "endTokenPos": 83,
+                    "endFilePos": 403
+                },
+                "name": {
+                    "nodeType": "Name",
+                    "attributes": {
+                        "startLine": 17,
+                        "startTokenPos": 83,
+                        "startFilePos": 400,
+                        "endLine": 17,
+                        "endTokenPos": 83,
+                        "endFilePos": 403,
+                        "namespacedName": {
+                            "nodeType": "Name_FullyQualified",
+                            "attributes": {
+                                "startLine": 17,
+                                "startTokenPos": 83,
+                                "startFilePos": 400,
+                                "endLine": 17,
+                                "endTokenPos": 83,
+                                "endFilePos": 403
+                            },
+                            "name": "Afterchange\\Template\\Models\\null"
+                        }
+                    },
+                    "name": "null"
+                }
+            },
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "created_at": {
+            "name": "created_at",
+            "line": 18,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\DateTime",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        },
+        "updated_at": {
+            "name": "updated_at",
+            "line": 19,
+            "short_desc": null,
+            "long_desc": null,
+            "hint": [
+                [
+                    "\\DateTime",
+                    false
+                ]
+            ],
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        }
+    },
+    "methods": [],
+    "constants": []
+}

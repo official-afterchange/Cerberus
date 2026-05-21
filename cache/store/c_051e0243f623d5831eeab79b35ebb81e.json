@@ -1,0 +1,126 @@
+{
+    "name": "Afterchange\\Template\\Exceptions\\CustomErrorRenderer",
+    "line": 13,
+    "short_desc": "Renders application errors as HTML using the PhpRenderer, with normalized HTTP status codes and translation keys.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Exceptions",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Exceptions\/CustomErrorRenderer.php",
+    "relative_file": null,
+    "hash": "2b597745f67b003460bbf2429380e7782b540d8f",
+    "parent": null,
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "ErrorRendererInterface": "Slim\\Interfaces\\ErrorRendererInterface",
+        "Throwable": "Throwable"
+    },
+    "errors": [],
+    "interfaces": {
+        "Slim\\Interfaces\\ErrorRendererInterface": "Slim\\Interfaces\\ErrorRendererInterface"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 22,
+            "short_desc": "Initializes the renderer with the template engine.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "view": {
+                    "name": "view",
+                    "line": 22,
+                    "short_desc": "The template rendering engine.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Slim\\Views\\PhpRenderer",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "__invoke": {
+            "name": "__invoke",
+            "line": 35,
+            "short_desc": "Renders the error view for the given exception, normalizing the HTTP status code\nand mapping known exception types to translation keys.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The rendered HTML error page as a string.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "exception": {
+                    "name": "exception",
+                    "line": 35,
+                    "short_desc": "The caught exception to render.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Throwable",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "displayErrorDetails": {
+                    "name": "displayErrorDetails",
+                    "line": 35,
+                    "short_desc": "Whether to expose debug information in the view.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "bool",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

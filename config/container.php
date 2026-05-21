@@ -2,21 +2,17 @@
 
 declare(strict_types=1);
 
+use Afterchange\Template\Controllers\ForgotPasswordController;
 use Afterchange\Template\Controllers\HomeController;
 use Afterchange\Template\Controllers\LangController;
 use Afterchange\Template\Controllers\ProfileController;
-use Afterchange\Template\Controllers\ForgotPasswordController;
 use Afterchange\Template\Controllers\ResetPasswordController;
 use Afterchange\Template\Middlewares\AuthMiddleware;
 use Afterchange\Template\Middlewares\CsrfMiddleware;
 use Afterchange\Template\Middlewares\RateLimitMiddleware;
 use Afterchange\Template\Middlewares\RememberMeMiddleware;
-use Afterchange\Template\Repositories\PermissionRepository;
-use Afterchange\Template\Repositories\RoleRepository;
 use Afterchange\Template\Repositories\UserRepository;
 use Afterchange\Template\Services\AuthService;
-use Afterchange\Template\Services\PermissionService;
-use Afterchange\Template\Services\RoleService;
 use Afterchange\Template\Utils\Mailer;
 use Afterchange\Template\Utils\Translator;
 use DI\ContainerBuilder;
@@ -34,12 +30,12 @@ $containerBuilder->addDefinitions([
     PhpRenderer::class => function ($c) {
         $settings = $c->get('settings');
 
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+        if (\session_status() === \PHP_SESSION_NONE) {
+            \session_start();
         }
 
         if (empty($_SESSION['csrf_token'])) {
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            $_SESSION['csrf_token'] = \bin2hex(\random_bytes(32));
         }
 
         return new PhpRenderer(__DIR__ . '/../views', [

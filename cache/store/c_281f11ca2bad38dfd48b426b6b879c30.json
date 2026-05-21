@@ -1,0 +1,555 @@
+{
+    "name": "Afterchange\\Template\\Services\\AuthService",
+    "line": 15,
+    "short_desc": "Handles user authentication, registration, profile updates, and password reset workflows.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Services",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Services\/AuthService.php",
+    "relative_file": null,
+    "hash": "6974f0f266f7e4aa491c7d7de6fee37be704e24b",
+    "parent": "Afterchange\\Template\\Services\\Service",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "AuthException": "Afterchange\\Template\\Exceptions\\AuthException",
+        "User": "Afterchange\\Template\\Models\\User",
+        "UserRepository": "Afterchange\\Template\\Repositories\\UserRepository",
+        "ErrorCodes": "Afterchange\\Template\\Utils\\ErrorCodes"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "repository": {
+            "name": "repository",
+            "line": 20,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Repositories\\UserRepository",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false,
+            "is_intersection_type": false
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 27,
+            "short_desc": "Initializes the service with the user repository.",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "userRepository": {
+                    "name": "userRepository",
+                    "line": 27,
+                    "short_desc": "The repository used for all user database operations.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Repositories\\UserRepository",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "currentUser": {
+            "name": "currentUser",
+            "line": 37,
+            "short_desc": "Returns the currently authenticated user from the session.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The hydrated user model, or null if no session is active.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "login": {
+            "name": "login",
+            "line": 53,
+            "short_desc": "Authenticates a user by username or email and verifies their password.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ]
+            ],
+            "hint_desc": "The authenticated user model.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [
+                [
+                    "\\Afterchange\\Template\\Exceptions\\AuthException",
+                    "If credentials are missing or invalid."
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 53,
+                    "short_desc": "Expects 'username' (or email) and 'password' keys.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "register": {
+            "name": "register",
+            "line": 80,
+            "short_desc": "Validates registration data and creates a new user account.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ]
+            ],
+            "hint_desc": "The newly created and persisted user model.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [
+                [
+                    "\\Afterchange\\Template\\Exceptions\\AuthException",
+                    "If validation fails or the account could not be saved."
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 80,
+                    "short_desc": "Expects 'username', 'email', and 'password' keys.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "updateUser": {
+            "name": "updateUser",
+            "line": 121,
+            "short_desc": "Updates an existing user's profile data and optionally re-hashes their password.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ]
+            ],
+            "hint_desc": "The updated and persisted user model.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [
+                [
+                    "\\Afterchange\\Template\\Exceptions\\AuthException",
+                    "If email validation fails or the email is already taken."
+                ],
+                [
+                    "\\Exception",
+                    "If the user is not found or the update fails."
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "id": {
+                    "name": "id",
+                    "line": 121,
+                    "short_desc": "The ID of the user to update.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "data": {
+                    "name": "data",
+                    "line": 121,
+                    "short_desc": "Expects 'username', 'email', and optionally 'password' keys.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "createRememberToken": {
+            "name": "createRememberToken",
+            "line": 159,
+            "short_desc": "Generates a new remember-me token, persists it, and returns it.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "The generated remember-me token.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "user": {
+                    "name": "user",
+                    "line": 159,
+                    "short_desc": "The user to generate the token for.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\User",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "clearRememberToken": {
+            "name": "clearRememberToken",
+            "line": 174,
+            "short_desc": "Clears the remember-me token from the user record.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "user": {
+                    "name": "user",
+                    "line": 174,
+                    "short_desc": "The user whose token should be removed.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\User",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "loginFromToken": {
+            "name": "loginFromToken",
+            "line": 186,
+            "short_desc": "Attempts to authenticate a user from a remember-me token.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The matching user model, or null if the token is invalid.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "token": {
+                    "name": "token",
+                    "line": 186,
+                    "short_desc": "The remember-me token from the cookie.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "generateResetToken": {
+            "name": "generateResetToken",
+            "line": 200,
+            "short_desc": "Generates a password reset token for the given email and persists it with a 1-hour expiry.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The generated reset token, or null if no account matches the email.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "email": {
+                    "name": "email",
+                    "line": 200,
+                    "short_desc": "The email address of the account requesting a reset.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "validateResetToken": {
+            "name": "validateResetToken",
+            "line": 222,
+            "short_desc": "Validates a password reset token and checks that it has not expired.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The matching user model, or null if the token is invalid or expired.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "token": {
+                    "name": "token",
+                    "line": 222,
+                    "short_desc": "The reset token to validate.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "resetPassword": {
+            "name": "resetPassword",
+            "line": 245,
+            "short_desc": "Hashes and applies a new password for the user, then clears the reset token.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "True on success, false on failure.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [
+                [
+                    "\\Afterchange\\Template\\Exceptions\\AuthException",
+                    "If the new password does not meet the minimum length requirement."
+                ]
+            ],
+            "errors": [],
+            "parameters": {
+                "user": {
+                    "name": "user",
+                    "line": 245,
+                    "short_desc": "The user whose password is being reset.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Afterchange\\Template\\Models\\User",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                },
+                "newPassword": {
+                    "name": "newPassword",
+                    "line": 245,
+                    "short_desc": "The new plain-text password (minimum 8 characters).",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

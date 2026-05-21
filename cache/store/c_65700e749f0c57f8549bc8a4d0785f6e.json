@@ -1,0 +1,208 @@
+{
+    "name": "Afterchange\\Template\\Repositories\\UserRepository",
+    "line": 13,
+    "short_desc": "Handles database queries for user records.",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Afterchange\\Template\\Repositories",
+    "file": "\/var\/www\/html\/projects\/template\/src\/Repositories\/UserRepository.php",
+    "relative_file": null,
+    "hash": "5381eeab1d5e7cf3892b86d4db19aca648d3d6e2",
+    "parent": "Afterchange\\Template\\Repositories\\Repository",
+    "modifiers": 32,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "User": "Afterchange\\Template\\Models\\User",
+        "PDO": "PDO"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "findByEmail": {
+            "name": "findByEmail",
+            "line": 21,
+            "short_desc": "Finds a user by their email address.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The hydrated user model, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "email": {
+                    "name": "email",
+                    "line": 21,
+                    "short_desc": "The email address to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "findByUsername": {
+            "name": "findByUsername",
+            "line": 43,
+            "short_desc": "Finds a user by their username.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The hydrated user model, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "username": {
+                    "name": "username",
+                    "line": 43,
+                    "short_desc": "The username to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "findByRememberToken": {
+            "name": "findByRememberToken",
+            "line": 65,
+            "short_desc": "Finds a user by their remember-me token.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The hydrated user model, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "token": {
+                    "name": "token",
+                    "line": 65,
+                    "short_desc": "The remember-me token to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        },
+        "findByResetToken": {
+            "name": "findByResetToken",
+            "line": 87,
+            "short_desc": "Finds a user by their password reset token.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Afterchange\\Template\\Models\\User",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "The hydrated user model, or null if not found.",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "is_intersection_type": false,
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "token": {
+                    "name": "token",
+                    "line": 87,
+                    "short_desc": "The reset token to look up.",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": 0,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false,
+                    "is_read_only": false,
+                    "is_intersection_type": false
+                }
+            }
+        }
+    },
+    "constants": []
+}
